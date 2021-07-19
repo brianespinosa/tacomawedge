@@ -1,0 +1,41 @@
+{
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx]": {
+    "editor.wordWrap": "on",
+    "editor.wrappingIndent": "same"
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "autoSnippet.snippets": [
+    {
+      "pattern": "**/[A-Z]*.js",
+      "snippet": "New React Component"
+    },
+    {
+      "pattern": "**/index.js",
+      "snippet": "Export Component Index"
+    }
+  ],
+  "cssModules.camelCase": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "emmet.syntaxProfiles": {
+    "html": {
+      "attr_quotes": "single"
+    },
+    "javascript": {
+      "self_closing_tag": true
+    }
+  },
+  "emmet.triggerExpansionOnTab": true,
+  "git.autofetch": true,
+  "prettier.requireConfig": true
+}

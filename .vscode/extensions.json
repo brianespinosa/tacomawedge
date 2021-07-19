@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "andrewleedham.vscode-css-modules",
+    "bungcip.better-toml",
+    "clinyong.vscode-css-modules",
+    "codeandstuff.package-json-upgrade",
+    "dbaeumer.vscode-eslint",
+    "gruntfuggly.auto-snippet",
+    "mgmcdermott.vscode-language-babel",
+    "silvenon.mdx",
+    "xyc.vscode-mdx-preview"
+  ],
+  "unwantedRecommendations": []
+}
