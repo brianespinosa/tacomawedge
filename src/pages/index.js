@@ -28,7 +28,10 @@ export default function Home() {
 
         <meta property='og:title' content='Tacoma Wedge Historic District' />
         <meta property='og:url' content='https://tacomawedge.org' />
-        <meta property='og:image' content='//wedgehistmap.jpg' />
+        <meta
+          property='og:image'
+          content='https://tacomawedge.org/wedgehistmap.jpg'
+        />
       </Head>
 
       <header>
