@@ -11,10 +11,11 @@
   },
   "prettier": "@bjeco/prettier-config",
   "eslintConfig": {
-    "extends": "@bjeco",
-    "rules": {
-      "react/react-in-jsx-scope": 0
-    }
+    "extends": [
+      "@bjeco",
+      "next",
+      "next/core-web-vitals"
+    ]
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "4.6.1",
@@ -26,14 +27,15 @@
   "devDependencies": {
     "@bjeco/eslint-config": "1.3.0",
     "@bjeco/prettier-config": "0.1.6",
-    "eslint": "7.29.0",
+    "eslint": "7.31.0",
+    "eslint-config-next": "11.0.1",
     "eslint-plugin-jest": "24.3.6",
     "eslint-plugin-json-format": "2.0.1",
     "eslint-plugin-jsx-a11y": "6.4.1",
     "eslint-plugin-react": "7.24.0",
     "eslint-plugin-react-hooks": "4.2.0",
     "eslint-plugin-unicorn": "33.0.1",
-    "jest": "27.0.5",
+    "jest": "27.0.6",
     "prettier": "2.3.2"
   }
 }
