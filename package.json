@@ -9,6 +9,13 @@
     "serve": "next start",
     "start": "next dev"
   },
+  "prettier": "@bjeco/prettier-config",
+  "eslintConfig": {
+    "extends": "@bjeco",
+    "rules": {
+      "react/react-in-jsx-scope": 0
+    }
+  },
   "dependencies": {
     "@icons-pack/react-simple-icons": "4.6.1",
     "next": "11.0.1",
@@ -28,12 +35,5 @@
     "eslint-plugin-unicorn": "33.0.1",
     "jest": "27.0.5",
     "prettier": "2.3.2"
-  },
-  "prettier": "@bjeco/prettier-config",
-  "eslintConfig": {
-    "extends": "@bjeco",
-    "rules": {
-      "react/react-in-jsx-scope": 0
-    }
   }
 }

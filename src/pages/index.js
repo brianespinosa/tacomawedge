@@ -3,7 +3,7 @@ import 'sanitize.css/forms.css';
 import 'sanitize.css/assets.css';
 import 'sanitize.css/typography.css';
 import 'sanitize.css/page.css';
-import { Twitter, Facebook, Instagram } from '@icons-pack/react-simple-icons';
+import { Facebook, Instagram, Twitter } from '@icons-pack/react-simple-icons';
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -44,7 +44,7 @@ export default function Home() {
             </li>
             <li>
               <ExternalLink href='https://www.cityoftacoma.org/government/city_departments/planning_and_development_services/historic_preservation/tacomas_historic_districts'>
-                Tacoma's Historic Districts - City of Tacoma
+                Tacoma&apos;s Historic Districts - City of Tacoma
               </ExternalLink>
             </li>
           </ul>
