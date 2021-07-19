@@ -27,6 +27,10 @@ export default function Home() {
         <link rel='icon' href='/favicon.ico' />
 
         <meta property='og:title' content='Tacoma Wedge Historic District' />
+        <meta
+          property='og:description'
+          content='Information About Tacoma’s Wedge Historic and Conservation District'
+        />
         <meta property='og:url' content='https://tacomawedge.org' />
         <meta
           property='og:image'
