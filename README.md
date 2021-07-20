@@ -1,2 +1,3 @@
-# web
-https://tacomawedge.org
+# Tacoma Wedge
+
+Web site for Tacoma Wedge Historical District
