@@ -50,6 +50,9 @@ export default function Home() {
           <ul>
             <li>August 13, 2022 - Wedge Block Party</li>
           </ul>
+        </section>
+
+        <section>
           <h2>Related Links</h2>
           <ul>
             <li>
@@ -65,6 +68,31 @@ export default function Home() {
           </ul>
         </section>
 
+        <section>
+          <h2>Social</h2>
+
+          <ExternalLink
+            style={socialStyle}
+            href='https://twitter.com/tacomawedge'
+          >
+            <Twitter aria-label='Twitter' />
+          </ExternalLink>
+
+          <ExternalLink
+            style={socialStyle}
+            href='https://www.instagram.com/tacomawedge/'
+          >
+            <Instagram aria-label='Instagram' />
+          </ExternalLink>
+
+          <ExternalLink
+            style={socialStyle}
+            href='https://www.facebook.com/tacomawedge/'
+          >
+            <Facebook aria-label='Facebook' />
+          </ExternalLink>
+        </section>
+
         {/* <section>
           <h2>Documents</h2>
           <ul>
@@ -75,30 +103,6 @@ export default function Home() {
           </ul>
         </section> */}
       </main>
-      <footer>
-        <h3>Social</h3>
-
-        <ExternalLink
-          style={socialStyle}
-          href='https://twitter.com/tacomawedge'
-        >
-          <Twitter aria-label='Twitter' />
-        </ExternalLink>
-
-        <ExternalLink
-          style={socialStyle}
-          href='https://www.instagram.com/tacomawedge/'
-        >
-          <Instagram aria-label='Instagram' />
-        </ExternalLink>
-
-        <ExternalLink
-          style={socialStyle}
-          href='https://www.facebook.com/tacomawedge/'
-        >
-          <Facebook aria-label='Facebook' />
-        </ExternalLink>
-      </footer>
     </>
   );
 }
