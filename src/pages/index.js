@@ -46,6 +46,10 @@ export default function Home() {
         <Image src={wedgehistmap} alt='Wedge Historic District Map'></Image>
 
         <section>
+          <h2>Upcoming Events</h2>
+          <ul>
+            <li>August 13, 2022 - Wedge Block Party</li>
+          </ul>
           <h2>Related Links</h2>
           <ul>
             <li>
