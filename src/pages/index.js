@@ -10,6 +10,7 @@ import Image from 'next/image';
 
 import ExternalLink from '../components/ExternalLink';
 import wedgehistmap from '../img/wedgehistmap.jpg';
+import blockParty from '../img/2023_block_party_square.png';
 
 const socialStyle = {
   marginRight: '.75em',
@@ -43,12 +44,14 @@ export default function Home() {
       </header>
 
       <main>
-        <Image src={wedgehistmap} alt='Wedge Historic District Map'></Image>
+        <Image src={wedgehistmap} alt='Wedge Historic District Map' />
 
         <section>
           <h2>Upcoming Events</h2>
+
+          <Image src={blockParty} alt='2023 Tacoma Wedge Block Party' />
           <ul>
-            <li>August 13, 2022 - Wedge Block Party</li>
+            <li>August 19, 2023 - Tacoma Wedge Block Party</li>
           </ul>
         </section>
 
