@@ -1,0 +1,32 @@
+/* html,
+body {
+  padding: 1em;
+  background-color: #000;
+  color: #eee;
+  text-align: center;
+}
+
+img {
+  max-width: calc(100% - 2em);
+  height: auto;
+}
+
+a,
+ul li {
+  display: inline-block;
+  margin: 1em;
+}
+
+em {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+ol {
+  text-align: left;
+}
+
+ol li {
+  margin-bottom: 1em;
+} */

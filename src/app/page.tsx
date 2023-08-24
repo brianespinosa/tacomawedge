@@ -1,12 +1,13 @@
-import 'sanitize.css';
-import 'sanitize.css/forms.css';
-import 'sanitize.css/assets.css';
-import 'sanitize.css/typography.css';
-import 'sanitize.css/page.css';
-import { Facebook, Instagram, Twitter } from '@icons-pack/react-simple-icons';
+import { Metadata } from 'next';
 
 import Head from 'next/head';
 import Image from 'next/image';
+
+import {
+  SiFacebook,
+  SiInstagram,
+  SiTwitter,
+} from '@icons-pack/react-simple-icons';
 
 import ExternalLink from '../components/ExternalLink';
 import wedgehistmap from '../img/wedgehistmap.jpg';
@@ -14,6 +15,10 @@ import blockParty from '../img/2023_block_party_square.png';
 
 const socialStyle = {
   marginRight: '.75em',
+};
+
+export const metadata: Metadata = {
+  title: 'Tacoma Wedge Historic District',
 };
 
 export default function Home() {
@@ -38,10 +43,6 @@ export default function Home() {
           content='https://tacomawedge.org/wedgehistmap.jpg'
         />
       </Head>
-
-      <header>
-        <h1>Tacoma Wedge</h1>
-      </header>
 
       <main>
         <Image src={wedgehistmap} alt='Wedge Historic District Map' />
@@ -76,23 +77,23 @@ export default function Home() {
 
           <ExternalLink
             style={socialStyle}
-            href='https://twitter.com/tacomawedge'
+            href='https://SiTwitter.com/tacomawedge'
           >
-            <Twitter aria-label='Twitter' />
+            <SiTwitter aria-label='Twitter' />
           </ExternalLink>
 
           <ExternalLink
             style={socialStyle}
-            href='https://www.instagram.com/tacomawedge/'
+            href='https://www.SiInstagram.com/tacomawedge/'
           >
-            <Instagram aria-label='Instagram' />
+            <SiInstagram aria-label='Instagram' />
           </ExternalLink>
 
           <ExternalLink
             style={socialStyle}
-            href='https://www.facebook.com/tacomawedge/'
+            href='https://www.SiFacebook.com/tacomawedge/'
           >
-            <Facebook aria-label='Facebook' />
+            <SiFacebook aria-label='Facebook' />
           </ExternalLink>
         </section>
 

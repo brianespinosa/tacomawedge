@@ -4,14 +4,17 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "lint": "eslint ./",
+    "postinstall": "husky install",
+    "lint": "eslint ./ && stylelint \"**/*.{css,scss,sass}\"",
     "pretty": "prettier --write .",
     "serve": "next start",
-    "start": "next dev"
+    "start": "next dev",
+    "test": "echo \"Warning: no test specified\" && exit 0"
   },
-  "prettier": "@bjeco/prettier-config",
-  "stylelint": {
-    "extends": "@bjeco/stylelint-config"
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "browserslist": {
     "production": [
@@ -25,43 +28,39 @@
       "last 1 safari version"
     ]
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{css,scss,sass,less}": [
-      "stylelint --fix",
-      "prettier --write"
-    ],
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{md,mdx,html}": [
-      "prettier --write"
-    ]
+  "prettier": "@bjeco/prettier-config",
+  "resolutions": {
+    "stylelint-order": "6.0.3"
   },
   "dependencies": {
-    "@icons-pack/react-simple-icons": "4.6.1",
-    "fathom-client": "3.4.1",
-    "next": "12.1.5",
+    "@icons-pack/react-simple-icons": "9.0.0",
+    "fathom-client": "3.5.0",
+    "next": "13.4.19",
     "normalize.css": "8.0.1",
-    "react": "18.0.0",
-    "react-dom": "18.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "sanitize.css": "12.0.1"
   },
   "devDependencies": {
     "@bjeco/prettier-config": "*",
-    "@bjeco/stylelint-config": "*",
-    "eslint": "8.14.0",
-    "eslint-config-next": "12.1.5",
-    "husky": "7.0.4",
-    "lint-staged": "12.4.0",
-    "prettier": "2.6.2",
-    "sass": "1.50.1",
-    "stylelint": "14.7.1"
+    "@types/node": "20.5.4",
+    "@types/react": "18.2.21",
+    "eslint": "8.47.0",
+    "eslint-config-next": "13.4.19",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-json-format": "2.0.1",
+    "eslint-plugin-unicorn": "48.0.1",
+    "husky": "8.0.3",
+    "lint-staged": "14.0.1",
+    "prettier": "3.0.2",
+    "sass": "1.66.1",
+    "sharp": "0.32.5",
+    "stylelint": "15.10.3",
+    "stylelint-config-css-modules": "4.3.0",
+    "stylelint-config-idiomatic-order": "9.0.0",
+    "stylelint-config-recommended-scss": "12.0.0",
+    "stylelint-config-standard": "34.0.0",
+    "typescript": "5.0.4"
   },
   "packageManager": "yarn@3.2.0"
 }

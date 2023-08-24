@@ -9,16 +9,6 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "autoSnippet.snippets": [
-    {
-      "pattern": "**/[A-Z]*.js",
-      "snippet": "React Component"
-    },
-    {
-      "pattern": "**/index.js",
-      "snippet": "Export Index"
-    }
-  ],
   "cssModules.camelCase": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
@@ -39,6 +29,8 @@
     }
   },
   "emmet.triggerExpansionOnTab": true,
+  "eslint.enable": true,
+  "eslint.validate": ["json"],
   "git.autofetch": true,
   "prettier.requireConfig": true,
   "jest.coverageColors": {
@@ -49,20 +41,15 @@
   "jest.jestCommandLine": "yarn test",
   "jest.showCoverageOnLoad": true
   // "workbench.colorCustomizations": {
-  //   "activityBar.activeBackground": "#567ebc",
-  //   "activityBar.activeBorder": "#dce0e6",
-  //   "activityBar.background": "#2b4c7e",
-  //   "activityBar.foreground": "#dce0e6",
-  //   "activityBar.inactiveForeground": "#567ebc",
-  //   "activityBarBadge.background": "#dce0e6",
-  //   "activityBarBadge.foreground": "#2b4c7e",
-  //   "list.hoverBackground": "#567ebc",
-  //   "list.activeSelectionBackground": "#2b4c7e",
-  //   "list.activeSelectionForeground": "#dce0e6",
-  //   "list.hoverForeground": "#fff",
-  //   "sideBar.background": "#1F1F20",
-  //   "sideBar.foreground": "#dce0e6",
-  //   "sideBarSectionHeader.background": "#2b4c7e",
-  //   "sideBarSectionHeader.foreground": "#dce0e6"
+  //   "activityBar.activeBackground": "#259625",
+  //   "activityBar.activeBorder": "#5BD75B",
+  //   "activityBar.background": "#176017",
+  //   "activityBar.foreground": "#5BD75B",
+  //   "activityBar.inactiveForeground": "#259625",
+  //   "activityBarBadge.background": "#5BD75B",
+  //   "activityBarBadge.foreground": "#176017",
+  //   "list.hoverBackground": "#259625",
+  //   "list.activeSelectionBackground": "#176017",
+  //   "sideBarSectionHeader.background": "#176017",
   // }
 }
