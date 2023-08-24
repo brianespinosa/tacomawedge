@@ -4802,10 +4802,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sanitize.css@npm:13.0.0":
-  version: 13.0.0
-  resolution: "sanitize.css@npm:13.0.0"
-  checksum: a99ca77c4d135800a4a93c3555e5aa4a2eb040a833df716dbe9132e1f2086fbf9acdb8021a579f40dcf77166d2d50f3358b4b6121a247d26fed5a0e6f5af3bb7
+"sanitize.css@npm:12.0.1":
+  version: 12.0.1
+  resolution: "sanitize.css@npm:12.0.1"
+  checksum: 9d1e26d5ae941a1c7dc92c6b0d93c66f0365bf786cd6eef549c0089666da9216171064410f692fc7c73085c8795c550fe64bc2642e19a540d2dbe032b460f112
   languageName: node
   linkType: hard
 
@@ -5553,7 +5553,7 @@ __metadata:
     prettier: 3.0.2
     react: 18.2.0
     react-dom: 18.2.0
-    sanitize.css: 13.0.0
+    sanitize.css: 12.0.1
     sass: 1.66.1
     sharp: 0.32.5
     stylelint: 15.10.3
