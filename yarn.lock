@@ -4270,7 +4270,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-scss@npm:^4.0.6":
+"postcss-scss@npm:^4.0.7":
   version: 4.0.7
   resolution: "postcss-scss@npm:4.0.7"
   peerDependencies:
@@ -5362,29 +5362,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-recommended-scss@npm:12.0.0":
-  version: 12.0.0
-  resolution: "stylelint-config-recommended-scss@npm:12.0.0"
+"stylelint-config-recommended-scss@npm:13.0.0":
+  version: 13.0.0
+  resolution: "stylelint-config-recommended-scss@npm:13.0.0"
   dependencies:
-    postcss-scss: ^4.0.6
-    stylelint-config-recommended: ^12.0.0
-    stylelint-scss: ^5.0.0
+    postcss-scss: ^4.0.7
+    stylelint-config-recommended: ^13.0.0
+    stylelint-scss: ^5.1.0
   peerDependencies:
     postcss: ^8.3.3
-    stylelint: ^15.5.0
+    stylelint: ^15.10.0
   peerDependenciesMeta:
     postcss:
       optional: true
-  checksum: 9bffa840a75c51b6bd7024ac8dbfd027983d57b86e9aad662c3023242deca433b9d7ccbfd9e909f7295081d55f7c0a3755a18e0d8a558997d4d37b8dc17ffc78
-  languageName: node
-  linkType: hard
-
-"stylelint-config-recommended@npm:^12.0.0":
-  version: 12.0.0
-  resolution: "stylelint-config-recommended@npm:12.0.0"
-  peerDependencies:
-    stylelint: ^15.5.0
-  checksum: d1de0fa2673c8aa4e50259eb7320cc17e7d09d13a176afea943b3227befcaaaf4e78b546ec076ace1e031ff526c81ea5dc6efa98dd7dc77c582b7352a128d37c
+  checksum: 5cbb771d756861ff11ee6fa85b8a58041798df9886a7621a9157caab308c965eeda75d7c532f01b620f632c282e0e32597d942cd6f18239dca949c6b78280ba8
   languageName: node
   linkType: hard
 
@@ -5420,7 +5411,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-scss@npm:^5.0.0, stylelint-scss@npm:^5.0.0 || ^6.0.0":
+"stylelint-scss@npm:^5.0.0 || ^6.0.0, stylelint-scss@npm:^5.1.0":
   version: 5.1.0
   resolution: "stylelint-scss@npm:5.1.0"
   dependencies:
@@ -5566,7 +5557,7 @@ __metadata:
     stylelint: 15.10.3
     stylelint-config-css-modules: 4.3.0
     stylelint-config-idiomatic-order: 9.0.0
-    stylelint-config-recommended-scss: 12.0.0
+    stylelint-config-recommended-scss: 13.0.0
     stylelint-config-standard: 34.0.0
     typescript: 5.2.2
   languageName: unknown
