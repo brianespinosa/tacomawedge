@@ -1,0 +1,27 @@
+@import url('normalize.css');
+@import url('sanitize.css');
+@import url('sanitize.css/forms.css');
+@import url('sanitize.css/typography.css');
+
+body {
+  padding: 1em 2em;
+}
+
+header,
+main,
+footer {
+  max-width: 40em;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ol,
+ul {
+  li + li {
+    margin-top: 0.5em;
+  }
+}

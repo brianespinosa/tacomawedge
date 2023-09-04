@@ -39,7 +39,7 @@
     "normalize.css": "8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sanitize.css": "12.0.1"
+    "sanitize.css": "13.0.0"
   },
   "devDependencies": {
     "@bjeco/prettier-config": "*",
