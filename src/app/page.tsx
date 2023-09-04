@@ -1,8 +1,3 @@
-import { Metadata } from 'next';
-
-import Head from 'next/head';
-import Image from 'next/image';
-
 import {
   SiFacebook,
   SiInstagram,
@@ -10,8 +5,11 @@ import {
 } from '@icons-pack/react-simple-icons';
 
 import ExternalLink from '../components/ExternalLink';
-import wedgehistmap from '../img/wedgehistmap.jpg';
+import Head from 'next/head';
+import Image from 'next/image';
+import { Metadata } from 'next';
 import blockParty from '../img/2023_block_party_square.png';
+import wedgehistmap from '../img/wedgehistmap.jpg';
 
 const socialStyle = {
   marginRight: '.75em',

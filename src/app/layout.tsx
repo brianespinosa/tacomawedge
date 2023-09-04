@@ -1,14 +1,8 @@
-import React from 'react';
-import 'sanitize.css';
-import 'sanitize.css/forms.css';
-import 'sanitize.css/assets.css';
-import 'sanitize.css/typography.css';
-import 'sanitize.css/page.css';
-import './layout.css';
-
-import { Metadata } from 'next';
+import './layout.scss';
 
 import Fathom from '../components/Fathom';
+import { Metadata } from 'next';
+import React from 'react';
 
 export const metadata: Metadata = {
   title: {
