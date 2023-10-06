@@ -53,7 +53,7 @@
     "husky": "8.0.3",
     "lint-staged": "14.0.1",
     "prettier": "3.0.3",
-    "sass": "1.68.0",
+    "sass": "1.69.0",
     "sharp": "0.32.6",
     "stylelint": "15.10.3",
     "stylelint-config-css-modules": "4.3.0",
