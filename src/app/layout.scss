@@ -1,7 +1,5 @@
 @import url('normalize.css');
-@import url('sanitize.css');
-@import url('sanitize.css/forms.css');
-@import url('sanitize.css/typography.css');
+@import url('@picocss/pico');
 
 body {
   padding: 1em 2em;

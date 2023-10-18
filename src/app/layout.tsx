@@ -2,13 +2,16 @@ import './layout.scss';
 
 import Fathom from '../components/Fathom';
 import { Metadata } from 'next';
-import React from 'react';
+import Image from 'next/image';
+import wedgehistmap from '../img/wedgehistmap.jpg';
+import { ReactElement } from 'react';
 
 export const metadata: Metadata = {
   title: {
     default: 'Not Found',
     template: '%s | Tacoma Wedge Historic District',
   },
+  metadataBase: new URL('https://tacomawedge.org/'),
 };
 
 export default function RootLayout({
@@ -16,7 +19,7 @@ export default function RootLayout({
   // This will be populated with nested layouts or pages
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactElement;
 }) {
   return (
     <html lang='en-US'>
@@ -24,6 +27,11 @@ export default function RootLayout({
       <body>
         <header>
           <h1>Tacoma Wedge Historic District</h1>
+          <Image
+            src={wedgehistmap}
+            alt='Wedge Historic District Map'
+            placeholder='blur'
+          />
         </header>
         <main>{children}</main>
       </body>
