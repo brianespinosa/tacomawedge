@@ -32,14 +32,14 @@ export default function Home() {
       <section>
         <h2>Upcoming Events</h2>
 
-        <Image
-          src={blockParty}
-          alt='2023 Tacoma Wedge Block Party'
-          placeholder='blur'
-        />
-        <ul>
-          <li>August 19, 2023 - Tacoma Wedge Block Party</li>
-        </ul>
+        <figure>
+          <Image
+            src={blockParty}
+            alt='2023 Tacoma Wedge Block Party'
+            placeholder='blur'
+          />
+          <figcaption>August 19, 2023 - Tacoma Wedge Block Party</figcaption>
+        </figure>
       </section>
 
       <section>
