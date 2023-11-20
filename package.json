@@ -36,7 +36,7 @@
     "@icons-pack/react-simple-icons": "9.1.0",
     "@picocss/pico": "1.5.10",
     "fathom-client": "3.6.0",
-    "next": "14.0.2",
+    "next": "14.0.3",
     "normalize.css": "8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
