@@ -45,7 +45,7 @@
     "@bjeco/prettier-config": "*",
     "@types/node": "20.10.3",
     "@types/react": "18.2.38",
-    "eslint": "8.54.0",
+    "eslint": "8.55.0",
     "eslint-config-next": "14.0.3",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-json-format": "2.0.1",
