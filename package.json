@@ -44,7 +44,7 @@
   "devDependencies": {
     "@bjeco/prettier-config": "*",
     "@types/node": "20.10.3",
-    "@types/react": "18.2.41",
+    "@types/react": "18.2.43",
     "eslint": "8.55.0",
     "eslint-config-next": "14.0.4",
     "eslint-config-prettier": "9.1.0",
