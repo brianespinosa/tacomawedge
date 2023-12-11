@@ -5419,14 +5419,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-idiomatic-order@npm:9.0.0":
-  version: 9.0.0
-  resolution: "stylelint-config-idiomatic-order@npm:9.0.0"
+"stylelint-config-idiomatic-order@npm:10.0.0":
+  version: 10.0.0
+  resolution: "stylelint-config-idiomatic-order@npm:10.0.0"
   dependencies:
-    stylelint-order: ^5.0.0
+    stylelint-order: ^6.0.2
   peerDependencies:
     stylelint: ">=11"
-  checksum: ff942702442cb60116ef35442f8ab15279fbaeb6ce6ca2e56f3b0fd11c1f5355a8aa4a8cdca5f64d5cfd3b4879f662e1a092333965a16342fc25d9ff230616c6
+  checksum: c8760d77dc8523bbeb5ca919ad00f3bd2593fc31af72637c2380c903d61022d39b5e8d971e03ab02705b1e70a8364c4f6fe5b1473ad8f9fd830067a537a32682
   languageName: node
   linkType: hard
 
@@ -5639,7 +5639,7 @@ __metadata:
     sharp: 0.33.0
     stylelint: 15.11.0
     stylelint-config-css-modules: 4.3.0
-    stylelint-config-idiomatic-order: 9.0.0
+    stylelint-config-idiomatic-order: 10.0.0
     stylelint-config-recommended-scss: 13.1.0
     stylelint-config-standard: 34.0.0
     typescript: 5.3.2
