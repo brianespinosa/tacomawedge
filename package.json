@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "9.3.0",
-    "@picocss/pico": "2.0.3",
+    "@picocss/pico": "2.0.6",
     "fathom-client": "3.6.0",
     "next": "14.1.0",
     "normalize.css": "8.0.1",
