@@ -506,10 +506,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@picocss/pico@npm:2.0.3":
-  version: 2.0.3
-  resolution: "@picocss/pico@npm:2.0.3"
-  checksum: 9e520e240f3b29e19e9fe136a258a67759fbd89eaae3e8abfce8fab933e79e38cb85774b81fc134426cf4255913e69d4fd1f28d514596e4d3eac8dce90962fa0
+"@picocss/pico@npm:2.0.6":
+  version: 2.0.6
+  resolution: "@picocss/pico@npm:2.0.6"
+  checksum: 71b15552ee7e6e9df2076ccb0f90aa54f5b7853aa1c104ce109775e62b1507d95c3ca8c52d4790b4d2110b13d6869b2f09605f6e416b61a3df95e732fefc64cd
   languageName: node
   linkType: hard
 
@@ -5775,7 +5775,7 @@ __metadata:
   dependencies:
     "@bjeco/prettier-config": "*"
     "@icons-pack/react-simple-icons": 9.3.0
-    "@picocss/pico": 2.0.3
+    "@picocss/pico": 2.0.6
     "@types/node": 20.11.20
     "@types/react": 18.2.61
     eslint: 8.57.0
