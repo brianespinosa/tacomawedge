@@ -182,12 +182,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@icons-pack/react-simple-icons@npm:9.4.0":
-  version: 9.4.0
-  resolution: "@icons-pack/react-simple-icons@npm:9.4.0"
+"@icons-pack/react-simple-icons@npm:9.4.1":
+  version: 9.4.1
+  resolution: "@icons-pack/react-simple-icons@npm:9.4.1"
   peerDependencies:
     react: ^16.13 || ^17 || ^18
-  checksum: 0e9660d5a0870e0ba8798574a3a2dca779ee6ba88aac6fd7c7a68db9bea7da30431b089792a8a627e33ace7e9b4b33f4b22c1d17f849cf2efd359fdfaec49a9e
+  checksum: b170d6db945f58e86e8bfa25decaf200db14ef8b6ef47b9bf7165d4fd48f2d25c7da6ae10e3ac7d4cc7ca3b5f3ac74d1296912cdb962932a9b7a90569c7b43c3
   languageName: node
   linkType: hard
 
@@ -5785,7 +5785,7 @@ __metadata:
   resolution: "tacomawedge@workspace:."
   dependencies:
     "@bjeco/prettier-config": "*"
-    "@icons-pack/react-simple-icons": 9.4.0
+    "@icons-pack/react-simple-icons": 9.4.1
     "@picocss/pico": 2.0.6
     "@types/node": 20.12.7
     "@types/react": 18.2.64

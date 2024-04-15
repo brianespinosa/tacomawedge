@@ -33,7 +33,7 @@
     "stylelint-order": "6.0.3"
   },
   "dependencies": {
-    "@icons-pack/react-simple-icons": "9.4.0",
+    "@icons-pack/react-simple-icons": "9.4.1",
     "@picocss/pico": "2.0.6",
     "fathom-client": "3.6.0",
     "next": "14.1.4",
