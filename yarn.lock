@@ -2324,10 +2324,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fathom-client@npm:3.6.0":
-  version: 3.6.0
-  resolution: "fathom-client@npm:3.6.0"
-  checksum: 0cbb6c3f4051a5c0264ae8c8e881a94f51042d6e411f5d41331a7a141fb52250e556bf202770b116216ea93fde9b67429c7a1646d83895b529701f14d40867d6
+"fathom-client@npm:3.7.0":
+  version: 3.7.0
+  resolution: "fathom-client@npm:3.7.0"
+  checksum: fe41807c314e3b5dc91c1770eb3f3216e5017ed07f7549699b6e575c946d469ccd9bf33c460f5259d676a101ee1f887176e6cf4bdf3fa8bd8770785d934dab3d
   languageName: node
   linkType: hard
 
@@ -5785,7 +5785,7 @@ __metadata:
     eslint-config-prettier: 9.1.0
     eslint-plugin-json-format: 2.0.1
     eslint-plugin-unicorn: 54.0.0
-    fathom-client: 3.6.0
+    fathom-client: 3.7.0
     husky: 9.0.11
     lint-staged: 15.2.2
     next: 14.2.3
