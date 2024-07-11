@@ -4,10 +4,10 @@ import {
   SiTwitter,
 } from '@icons-pack/react-simple-icons';
 
-import ExternalLink from '../components/ExternalLink';
+import ExternalLink from '@/components/ExternalLink';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import blockParty from '../img/2024_block_party.jpg';
+import blockParty from '@/img/2024_block_party.jpg';
 
 const socialStyle = {
   marginRight: '.75em',
