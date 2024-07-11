@@ -7,7 +7,7 @@ import {
 import ExternalLink from '../components/ExternalLink';
 import Image from 'next/image';
 import { Metadata } from 'next';
-import blockParty from '../img/2023_block_party_square.png';
+import blockParty from '../img/2024_block_party.jpg';
 
 const socialStyle = {
   marginRight: '.75em',
@@ -35,10 +35,10 @@ export default function Home() {
         <figure>
           <Image
             src={blockParty}
-            alt='2023 Tacoma Wedge Block Party'
+            alt='2024 Tacoma Wedge Block Party'
             placeholder='blur'
           />
-          <figcaption>August 19, 2023 - Tacoma Wedge Block Party</figcaption>
+          <figcaption>August 24, 2024 - Tacoma Wedge Block Party</figcaption>
         </figure>
       </section>
 
