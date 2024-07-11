@@ -63,21 +63,21 @@ export default function Home() {
 
         <ExternalLink
           style={socialStyle}
-          href='https://SiTwitter.com/tacomawedge'
+          href='https://twitter.com/tacomawedge'
         >
           <SiTwitter aria-label='Twitter' />
         </ExternalLink>
 
         <ExternalLink
           style={socialStyle}
-          href='https://www.SiInstagram.com/tacomawedge/'
+          href='https://www.instagram.com/tacomawedge/'
         >
           <SiInstagram aria-label='Instagram' />
         </ExternalLink>
 
         <ExternalLink
           style={socialStyle}
-          href='https://www.SiFacebook.com/tacomawedge/'
+          href='https://www.facebook.com/tacomawedge/'
         >
           <SiFacebook aria-label='Facebook' />
         </ExternalLink>
