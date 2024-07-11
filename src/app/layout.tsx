@@ -1,9 +1,9 @@
 import './layout.scss';
 
-import Fathom from '../components/Fathom';
+import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import Image from 'next/image';
-import wedgehistmap from '../img/wedgehistmap.jpg';
+import wedgehistmap from '@/img/wedgehistmap.jpg';
 import { ReactElement } from 'react';
 
 export const metadata: Metadata = {
@@ -23,7 +23,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en-US'>
-      <Fathom />
       <body>
         <header>
           <h1>Tacoma Wedge Historic District</h1>
@@ -34,6 +33,7 @@ export default function RootLayout({
           />
         </header>
         <main>{children}</main>
+        <Analytics />
       </body>
     </html>
   );
