@@ -1,0 +1,9 @@
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Catch-all
+* @brianespinosa
+
+# Set no owners for the following paths/files (mainly for Dependabot)
+package.json
+package-lock.json
+yarn.lock
