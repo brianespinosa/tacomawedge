@@ -182,15 +182,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@icons-pack/react-simple-icons@npm:9.5.0":
-  version: 9.5.0
-  resolution: "@icons-pack/react-simple-icons@npm:9.5.0"
-  peerDependencies:
-    react: ^16.13 || ^17 || ^18
-  checksum: b57a5c00e67799e4d59c48103e5bd9ac7bca47459102de3f22f6b9675ffe932301faf889dbd9f0bf5ebf71c37f7878cc9bdbc2a635e94a02c48ba72820d2efbb
-  languageName: node
-  linkType: hard
-
 "@img/sharp-darwin-arm64@npm:0.33.5":
   version: 0.33.5
   resolution: "@img/sharp-darwin-arm64@npm:0.33.5"
@@ -1188,17 +1179,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"caniuse-lite@npm:^1.0.30001579":
-  version: 1.0.30001579
-  resolution: "caniuse-lite@npm:1.0.30001579"
-  checksum: 7539dcff74d2243a30c428393dc690c87fa34d7da36434731853e9bcfe783757763b2971f5cc878e25242a93e184e53f167d11bd74955af956579f7af71cc764
-  languageName: node
-  linkType: hard
-
-"caniuse-lite@npm:^1.0.30001587":
-  version: 1.0.30001617
-  resolution: "caniuse-lite@npm:1.0.30001617"
-  checksum: a03bfd6ed474d14378f1b93bf90e9b0031e56a813cf42b364e5a86881ecdcdfdd58bf94c56febb0e4128c5ab57cc0a760ab7f3ef7ce0c1ead1af78a8e806375e
+"caniuse-lite@npm:^1.0.30001579, caniuse-lite@npm:^1.0.30001587":
+  version: 1.0.30001651
+  resolution: "caniuse-lite@npm:1.0.30001651"
+  checksum: c31a5a01288e70cdbbfb5cd94af3df02f295791673173b8ce6d6a16db4394a6999197d44190be5a6ff06b8c2c7d2047e94dfd5e5eb4c103ab000fca2d370afc7
   languageName: node
   linkType: hard
 
@@ -5787,7 +5771,6 @@ __metadata:
   resolution: "tacomawedge@workspace:."
   dependencies:
     "@bjeco/prettier-config": "*"
-    "@icons-pack/react-simple-icons": 9.5.0
     "@picocss/pico": 2.0.6
     "@types/node": 22.4.1
     "@types/react": 18.3.3

@@ -1,8 +1,4 @@
-import {
-  SiFacebook,
-  SiInstagram,
-  SiTwitter,
-} from '@icons-pack/react-simple-icons';
+import { facebook, instagram, twitter } from '@/components/icons';
 
 import ExternalLink from '@/components/ExternalLink';
 import Image from 'next/image';
@@ -65,21 +61,21 @@ export default function Home() {
           style={socialStyle}
           href='https://twitter.com/tacomawedge'
         >
-          <SiTwitter aria-label='Twitter' />
+          {twitter}
         </ExternalLink>
 
         <ExternalLink
           style={socialStyle}
           href='https://www.instagram.com/tacomawedge/'
         >
-          <SiInstagram aria-label='Instagram' />
+          {instagram}
         </ExternalLink>
 
         <ExternalLink
           style={socialStyle}
           href='https://www.facebook.com/tacomawedge/'
         >
-          <SiFacebook aria-label='Facebook' />
+          {facebook}
         </ExternalLink>
       </section>
 
