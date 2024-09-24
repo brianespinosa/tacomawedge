@@ -11,20 +11,30 @@ updates:
     commit-message:
       prefix: 'chore(deps): update'
     groups:
-      storybook:
+      babel:
         patterns:
-          - ^@storybook/.*
-          - ^storybook$
+          - '@babel/*'
+          - 'babel*'
       eslint:
         patterns:
-          - ^eslint-.*
-          - ^@typescript-eslint/.*
-          - ^eslint$
+          - '@typescript-eslint/*'
+          - 'eslint-*'
+          - 'eslint'
+      react:
+        patterns:
+          - '@types/react-dom'
+          - '@types/react'
+          - 'react-dom'
+          - 'react'
+      storybook:
+        patterns:
+          - '@storybook/*'
+          - 'storybook'
       stylelint:
         patterns:
-          - ^stylelint-.*
-          - ^stylelint$
+          - 'stylelint-*'
+          - 'stylelint'
       typescript:
         patterns:
-          - ^@types/.*
-          - ^typescript$
+          - '@types/*'
+          - 'typescript'

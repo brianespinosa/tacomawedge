@@ -11,6 +11,14 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  dependabot-automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3
+        with:
+          use-github-auto-merge: true
+          target: 'minor'
+
   lint:
     runs-on: ubuntu-latest
     steps:
