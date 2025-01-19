@@ -1,9 +1,7 @@
-import { facebook, instagram, twitter } from '@/components/icons';
+import { Metadata } from 'next';
 
 import ExternalLink from '@/components/ExternalLink';
-import Image from 'next/image';
-import { Metadata } from 'next';
-import blockParty from '@/img/2024_block_party.jpg';
+import { facebook, instagram, twitter } from '@/components/icons';
 
 const socialStyle = {
   marginRight: '.75em',
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <section>
+      {/* <section>
         <h2>Upcoming Events</h2>
 
         <figure>
@@ -36,7 +34,7 @@ export default function Home() {
           />
           <figcaption>August 24, 2024 - Tacoma Wedge Block Party</figcaption>
         </figure>
-      </section>
+      </section> */}
 
       <section>
         <h2>Related Links</h2>

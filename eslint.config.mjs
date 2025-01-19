@@ -1,4 +1,5 @@
 import unicorn from 'eslint-plugin-unicorn';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import jsonFormat from 'eslint-plugin-json-format';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -26,6 +27,7 @@ export default [
   {
     plugins: {
       unicorn,
+      'simple-import-sort': simpleImportSort,
       'json-format': jsonFormat,
     },
 
@@ -35,12 +37,46 @@ export default [
     },
 
     rules: {
+      'react/self-closing-comp': [
+        'error',
+        {
+          component: true,
+          html: true,
+        },
+      ],
+
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [
+            ['^.+\\.s?css$'],
+            ['^react$', '^next', '^[a-z]'],
+            ['^@'],
+            ['^~'],
+            ['^\\.\\.(?!/?$)', '^\\.\\./?$'],
+            ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
+            ['^\\u0000'],
+          ],
+        },
+      ],
+
       'unicorn/filename-case': [
         'error',
         {
           cases: {
             kebabCase: true,
             pascalCase: true,
+          },
+        },
+      ],
+
+      'unicorn/prevent-abbreviations': [
+        'error',
+        {
+          replacements: {
+            props: {
+              properties: false,
+            },
           },
         },
       ],

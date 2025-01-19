@@ -1,10 +1,11 @@
 import './layout.scss';
 
-import { Analytics } from '@vercel/analytics/react';
+import { ReactElement } from 'react';
 import { Metadata } from 'next';
 import Image from 'next/image';
+
 import wedgehistmap from '@/img/wedgehistmap.jpg';
-import { ReactElement } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
   title: {
