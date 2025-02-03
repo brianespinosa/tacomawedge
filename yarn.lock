@@ -793,12 +793,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:22.10.10":
-  version: 22.10.10
-  resolution: "@types/node@npm:22.10.10"
+"@types/node@npm:22.13.0":
+  version: 22.13.0
+  resolution: "@types/node@npm:22.13.0"
   dependencies:
     undici-types: ~6.20.0
-  checksum: 4906f63dd1dcee6acc096b3336353e04a15746b639bbf4f585e3093851a17852a9ea0e302caef2d782c836adb3812e6eb3305b8783809320013a1d77798816b3
+  checksum: 934122ad4c20bd583cae1cf5350f911350a99ca2fd2a4c1902c1db97af8bb4c496675d592a45f9ce8aced3006fe80ca075b7e9da030a61b2d9008b7259383a76
   languageName: node
   linkType: hard
 
@@ -6328,9 +6328,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint@npm:16.14.0":
-  version: 16.14.0
-  resolution: "stylelint@npm:16.14.0"
+"stylelint@npm:16.14.1":
+  version: 16.14.1
+  resolution: "stylelint@npm:16.14.1"
   dependencies:
     "@csstools/css-parser-algorithms": ^3.0.4
     "@csstools/css-tokenizer": ^3.0.3
@@ -6372,7 +6372,7 @@ __metadata:
     write-file-atomic: ^5.0.1
   bin:
     stylelint: bin/stylelint.mjs
-  checksum: eab3c34ffffdfb6b62772abbddf365c49ec566d91f12975ef2080dde45b81a116d128ac6ead4d97beb0e6102ebd340968607657bce0ae742584b568c9d416a57
+  checksum: ea845a77f5f69d01cdc55d2a74079d4a1f1a04ebf6855fa7e70c2e1e029c3aef14e17775e89d2523b24ba1b672cbaf9c5a8cb628b5b2f28859d988ad3a2b9257
   languageName: node
   linkType: hard
 
@@ -6437,7 +6437,7 @@ __metadata:
   dependencies:
     "@bjeco/prettier-config": "*"
     "@picocss/pico": 2.0.6
-    "@types/node": 22.10.10
+    "@types/node": 22.13.0
     "@types/react": 19.0.8
     "@vercel/analytics": 1.4.1
     eslint: 9.19.0
@@ -6456,7 +6456,7 @@ __metadata:
     react-dom: 19.0.0
     sass: 1.83.4
     sharp: 0.33.5
-    stylelint: 16.14.0
+    stylelint: 16.14.1
     stylelint-config-css-modules: 4.4.0
     stylelint-config-idiomatic-order: 10.0.0
     stylelint-config-recommended-scss: 14.1.0
