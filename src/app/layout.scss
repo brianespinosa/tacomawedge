@@ -1,5 +1,5 @@
 @import url('normalize.css');
-@import url('@picocss/pico');
+@import url('@radix-ui/themes/styles.css');
 
 body {
   padding: 1em 2em;
@@ -19,11 +19,13 @@ img {
 
 ol,
 ul {
-  li + li {
-    margin-top: 0.5em;
-  }
-}
+  padding-inline-start: 1.5em;
 
-a svg {
-  height: 1.25lh;
+  li + li {
+    margin-top: 0.75em;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

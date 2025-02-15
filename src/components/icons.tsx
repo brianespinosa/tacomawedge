@@ -1,8 +1,14 @@
+const iconStyle = {
+  width: '24px',
+  height: '24px',
+};
+
 export const twitter = (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
     viewBox='0 0 24 24'
+    style={iconStyle}
   >
     <path d='M1 19c15.617 6.062 20.038 -5.025 19.905 -10.5C22.173 8.156 23 7.292 23 6.406c-1.048 0.55 -1.595 0.394 -2.119 0 1.128 -0.768 1.071 -1.863 1.071 -2.619 -0.527 0.277 -1.503 0.96 -2.619 1.048 -0.745 -1.166 -2.619 -2.095 -5.238 -1.048 -2.619 1.048 -3.143 3.842 -2.619 5.238 -3.352 0 -7.333 -3.492 -8.905 -5.238 -1.883 2.688 0.5 5.353 1.572 6.286 -0.715 0.214 -1.572 0 -2.095 -0.524 0 2.991 2.619 4.19 3.666 4.715H3.62c0 2.095 2.444 2.968 3.667 3.142 -0.838 0.838 -4.215 1.596 -6.286 1.596Z' />
   </svg>
@@ -13,6 +19,7 @@ export const facebook = (
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
     viewBox='0 0 24 24'
+    style={iconStyle}
   >
     <path d='M13.5 1A4.5 4.5 0 0 0 9 5.5V9H6.5a0.5 0.5 0 0 0 -0.5 0.5v4a0.5 0.5 0 0 0 0.5 0.5H9v8.5a0.5 0.5 0 0 0 0.5 0.5h4a0.5 0.5 0 0 0 0.5 -0.5V14h2.5a0.5 0.5 0 0 0 0.485 -0.379l1 -4A0.5 0.5 0 0 0 17.5 9H14V7.5A1.5 1.5 0 0 1 15.5 6h2a0.5 0.5 0 0 0 0.5 -0.5v-4a0.5 0.5 0 0 0 -0.5 -0.5h-4Z' />
   </svg>
@@ -23,7 +30,7 @@ export const instagram = (
     xmlns='http://www.w3.org/2000/svg'
     fill='currentColor'
     viewBox='0 0 24 24'
-    id='Instagram-Logo-2--Streamline-Logos'
+    style={iconStyle}
   >
     <path
       fillRule='evenodd'
