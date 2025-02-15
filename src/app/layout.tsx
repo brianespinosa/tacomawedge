@@ -2,9 +2,9 @@ import './layout.scss';
 
 import { ReactElement } from 'react';
 import { Metadata } from 'next';
-import Image from 'next/image';
+import { ThemeProvider } from 'next-themes';
 
-import wedgehistmap from '@/img/wedgehistmap.jpg';
+import { Container, Heading, Theme } from '@radix-ui/themes';
 import { Analytics } from '@vercel/analytics/react';
 
 export const metadata: Metadata = {
@@ -23,18 +23,23 @@ export default function RootLayout({
   children: ReactElement;
 }) {
   return (
-    <html lang='en-US'>
+    <html lang='en-US' suppressHydrationWarning>
       <body>
-        <header>
-          <h1>Tacoma Wedge Historic District</h1>
-          <Image
-            src={wedgehistmap}
-            alt='Wedge Historic District Map'
-            placeholder='blur'
-          />
-        </header>
-        <main>{children}</main>
-        <Analytics />
+        <ThemeProvider attribute='class'>
+          <Theme accentColor='lime' grayColor='slate' radius='large'>
+            <Container asChild>
+              <header>
+                <Heading as='h1' size='8'>
+                  Tacoma Wedge Historic District
+                </Heading>
+              </header>
+            </Container>
+            <Container asChild>
+              <main>{children}</main>
+            </Container>
+            <Analytics />
+          </Theme>
+        </ThemeProvider>
       </body>
     </html>
   );
