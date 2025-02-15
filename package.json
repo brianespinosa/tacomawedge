@@ -7,8 +7,9 @@
     "postinstall": "husky install",
     "lint": "eslint ./ && stylelint \"**/*.{css,scss,sass}\"",
     "pretty": "prettier --write .",
+    "open-browser": "open http://localhost:3000",
     "serve": "next start",
-    "start": "next dev",
+    "start": "yarn open-browser && next dev --turbopack",
     "test": "echo \"Warning: no test specified\" && exit 0"
   },
   "husky": {
@@ -31,7 +32,7 @@
   "prettier": "@bjeco/prettier-config",
   "dependencies": {
     "@picocss/pico": "2.0.6",
-    "@vercel/analytics": "1.4.1",
+    "@vercel/analytics": "1.5.0",
     "fathom-client": "3.7.2",
     "next": "15.1.6",
     "normalize.css": "8.0.1",
@@ -42,14 +43,15 @@
     "@bjeco/prettier-config": "*",
     "@types/node": "22.13.1",
     "@types/react": "19.0.8",
-    "eslint": "9.20.0",
-    "eslint-config-next": "15.1.6",
+    "eslint": "9.20.1",
+    "eslint-config-next": "15.1.7",
     "eslint-config-prettier": "10.0.1",
     "eslint-plugin-json-format": "2.0.1",
     "eslint-plugin-simple-import-sort": "12.1.1",
     "eslint-plugin-unicorn": "56.0.1",
     "husky": "9.1.7",
     "lint-staged": "15.4.3",
+    "postcss": "8.5.2",
     "prettier": "3.5.0",
     "sass": "1.84.0",
     "sharp": "0.33.5",
@@ -60,5 +62,5 @@
     "stylelint-config-standard": "37.0.0",
     "typescript": "5.7.3"
   },
-  "packageManager": "yarn@3.6.3"
+  "packageManager": "yarn@4.6.0"
 }
