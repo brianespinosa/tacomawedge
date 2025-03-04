@@ -3,7 +3,9 @@ import './layout.scss';
 import { ReactElement } from 'react';
 import { Metadata } from 'next';
 import { ThemeProvider } from 'next-themes';
+import * as motion from 'motion/react-client';
 
+import CharacterFade from '@/components/CharacterFade';
 import { Container, Heading, Theme } from '@radix-ui/themes';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -13,6 +15,16 @@ export const metadata: Metadata = {
     template: '%s | Tacoma Wedge Historic District',
   },
   metadataBase: new URL('https://tacomawedge.org/'),
+};
+
+const mainVariants = {
+  // hidden: { opacity: 0 },
+  show: {
+    // opacity: 1,
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -26,16 +38,22 @@ export default function RootLayout({
     <html lang='en-US' suppressHydrationWarning>
       <body>
         <ThemeProvider attribute='class'>
-          <Theme accentColor='lime' grayColor='slate' radius='large'>
-            <Container asChild>
-              <header>
+          <Theme accentColor='cyan' grayColor='slate' radius='large'>
+            <Container asChild pt='6'>
+              <motion.header>
                 <Heading as='h1' size='8'>
-                  Tacoma Wedge Historic District
+                  <CharacterFade>Tacoma Wedge Historic District</CharacterFade>
                 </Heading>
-              </header>
+              </motion.header>
             </Container>
             <Container asChild>
-              <main>{children}</main>
+              <motion.main
+                variants={mainVariants}
+                initial='hidden'
+                animate='show'
+              >
+                {children}
+              </motion.main>
             </Container>
             <Analytics />
           </Theme>
