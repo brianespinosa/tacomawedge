@@ -17,6 +17,9 @@
       "pre-commit": "lint-staged"
     }
   },
+  "engines": {
+    "node": "22.x"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
