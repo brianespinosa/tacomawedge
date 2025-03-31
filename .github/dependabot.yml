@@ -9,6 +9,8 @@ updates:
       timezone: 'America/New_York'
     directory: /
 
+  # TODO: Go through and chunk updates into different groups by day so we do not block everything behind one big update
+
   - package-ecosystem: npm
     rebase-strategy: 'auto'
     directory: '/'
@@ -18,6 +20,11 @@ updates:
     ignore:
       - dependency-name: '*'
         versions: ['version-update:semver-major']
+      - dependency-name: 'eslint-plugin-unicorn' # Temporarily ignore this plugin until eslint support for flat file config
+        versions: ['*']
+      - dependency-name: 'typescript' # This is likely to conflight with peer dependencies and stop the whole dependency update process
+        versions: ['*']
+
     groups:
       dependencies:
         patterns:
