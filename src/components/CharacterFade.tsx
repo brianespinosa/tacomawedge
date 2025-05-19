@@ -17,18 +17,21 @@ const characterVariants = {
 };
 
 const CharacterFade = ({ children }: CharacterFadeProps) => (
-  <motion.span
-    initial='hidden'
-    animate='show'
-    transition={{ staggerChildren: 0.01, delayChildren: 0.5 }}
-  >
+  <>
     <VisuallyHidden>{children}</VisuallyHidden>
-    {[...children].map((char, index) => (
-      <motion.span aria-hidden key={index} variants={characterVariants}>
-        {char}
-      </motion.span>
-    ))}
-  </motion.span>
+    <motion.span
+      role='presentation'
+      initial='hidden'
+      animate='show'
+      transition={{ staggerChildren: 0.01, delayChildren: 0.5 }}
+    >
+      {[...children].map((char, index) => (
+        <motion.span key={index} variants={characterVariants}>
+          {char}
+        </motion.span>
+      ))}
+    </motion.span>
+  </>
 );
 
 export default CharacterFade;

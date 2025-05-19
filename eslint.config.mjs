@@ -1,6 +1,7 @@
 import unicorn from 'eslint-plugin-unicorn';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import jsonFormat from 'eslint-plugin-json-format';
+import pluginJest from 'eslint-plugin-jest';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
@@ -16,7 +17,14 @@ const compat = new FlatCompat({
 
 export default [
   {
-    ignores: ['*', '!src', '!**/package.json', '**/.pnp.*', '**/node_modules'],
+    ignores: [
+      '*',
+      '!src',
+      '!**/package.json',
+      '**/.pnp.*',
+      '**/node_modules',
+      '**/coverage',
+    ],
   },
   ...compat.extends(
     'eslint:recommended',
@@ -29,14 +37,22 @@ export default [
       unicorn,
       'simple-import-sort': simpleImportSort,
       'json-format': jsonFormat,
+      jest: pluginJest,
     },
 
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
+      globals: pluginJest.environments.globals.globals,
     },
 
     rules: {
+      'jest/no-disabled-tests': 'warn',
+      'jest/no-focused-tests': 'error',
+      'jest/no-identical-title': 'error',
+      'jest/prefer-to-have-length': 'warn',
+      'jest/valid-expect': 'error',
+
       'react/self-closing-comp': [
         'error',
         {

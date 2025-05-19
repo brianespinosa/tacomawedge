@@ -32,6 +32,9 @@ jobs:
     steps:
       - uses: brianespinosa/checkout-setup-node-install@main
       - run: yarn test
+      - uses: vebr/jest-lcov-reporter@v0.2.1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
   build:
     runs-on: ubuntu-latest
