@@ -1,4 +1,3 @@
-import unicorn from 'eslint-plugin-unicorn';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 import jsonFormat from 'eslint-plugin-json-format';
 import pluginJest from 'eslint-plugin-jest';
@@ -26,15 +25,9 @@ export default [
       '**/coverage',
     ],
   },
-  ...compat.extends(
-    'eslint:recommended',
-    'plugin:unicorn/recommended',
-    'next',
-    'prettier',
-  ),
+  ...compat.extends('eslint:recommended', 'next', 'prettier'),
   {
     plugins: {
-      unicorn,
       'simple-import-sort': simpleImportSort,
       'json-format': jsonFormat,
       jest: pluginJest,
@@ -73,27 +66,6 @@ export default [
             ['^\\./(?=.*/)(?!/?$)', '^\\.(?!/?$)', '^\\./?$'],
             ['^\\u0000'],
           ],
-        },
-      ],
-
-      'unicorn/filename-case': [
-        'error',
-        {
-          cases: {
-            kebabCase: true,
-            pascalCase: true,
-          },
-        },
-      ],
-
-      'unicorn/prevent-abbreviations': [
-        'error',
-        {
-          replacements: {
-            props: {
-              properties: false,
-            },
-          },
         },
       ],
     },
