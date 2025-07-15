@@ -12,9 +12,15 @@ footer {
   margin: auto;
 }
 
+figure,
 img {
   max-width: 100%;
   height: auto;
+  margin-inline: auto;
+
+  &:last-child {
+    margin-block-end: 0;
+  }
 }
 
 ol,
@@ -22,10 +28,10 @@ ul {
   padding-inline-start: 1.5em;
 
   li + li {
-    margin-top: 0.75em;
+    margin-block-start: 0.75em;
   }
 
   &:last-child {
-    margin-bottom: 0;
+    margin-block-end: 0;
   }
 }

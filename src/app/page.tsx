@@ -1,16 +1,16 @@
 import { Metadata } from 'next';
-import Image from 'next/image';
 
 import CharacterFade from '@/components/CharacterFade';
 import ExternalLink from '@/components/ExternalLink';
 import { facebook, instagram } from '@/components/icons';
+import InsetImage from '@/components/InsetImage';
 import Section from '@/components/Section';
+import blockParty from '@/img/2025_block_party.png';
 import wedgehistmap from '@/img/wedgehistmap.jpg';
 import {
   Flex,
   Heading,
   IconButton,
-  Inset,
   Separator,
   VisuallyHidden,
 } from '@radix-ui/themes';
@@ -35,33 +35,17 @@ export default function Home() {
         <VisuallyHidden>
           <Heading as='h2'>Map</Heading>
         </VisuallyHidden>
-        <Inset clip='padding-box'>
-          <Image
-            src={wedgehistmap}
-            alt='Wedge Historic District Map'
-            placeholder='blur'
-            style={{
-              display: 'block',
-              objectFit: 'cover',
-              width: '100%',
-              height: 'auto',
-              backgroundColor: 'var(--gray-5)',
-            }}
-          />
-        </Inset>
+        <InsetImage src={wedgehistmap} alt='Wedge Historic District Map' />
       </Section>
-      {/* <Section py='3'>
-        <Heading as='h2'>Upcoming Events</Heading>
-
-        <figure>
-          <Image
-            src={blockParty}
-            alt='2024 Tacoma Wedge Block Party'
-            placeholder='blur'
-          />
-          <figcaption>August 24, 2024 - Tacoma Wedge Block Party</figcaption>
-        </figure>
-      </Section> */}
+      <Section>
+        <VisuallyHidden>
+          <Heading as='h2'>August 23, 2025 - Tacoma Wedge Block Party</Heading>
+        </VisuallyHidden>
+        <InsetImage
+          src={blockParty}
+          alt='Join us for the annual Wedge Block Party. Fun and games for all! When: Saturday, August 23, 2025, 3:30PM - 7:00PM. Where: South Sheridan between 5th and 6th.'
+        />
+      </Section>
 
       <Section>
         <Heading as='h2'>
@@ -74,7 +58,7 @@ export default function Home() {
             </ExternalLink>
           </li>
           <li>
-            <ExternalLink href='https://www.cityoftacoma.org/government/city_departments/planning_and_development_services/historic_preservation/tacomas_historic_districts'>
+            <ExternalLink href='https://tacoma.gov/government/departments/planning-and-development-services/historic-preservation/tacomas-historic-districts-landmarks/#wedge-neighborhood-historic-district'>
               Tacoma&apos;s Historic Districts - City of Tacoma
             </ExternalLink>
           </li>
@@ -99,16 +83,6 @@ export default function Home() {
           </IconButton>
         </Flex>
       </Section>
-
-      {/* <Section py='3'>
-          <Heading as='h2'>Documents</Heading>
-          <ul>
-            // Looks like this link is dead on the NPS web site. Will have to contact them to get it restored.
-            <ExternalLink href='http://www.nps.gov/nr/feature/places/pdfs/16000856>
-              Historic District Register Inventory - NPS
-            </ExternalLink>
-          </ul>
-        </Section> */}
     </>
   );
 }
