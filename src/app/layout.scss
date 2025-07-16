@@ -1,14 +1,11 @@
 @import url('normalize.css');
 @import url('@radix-ui/themes/styles.css');
 
-body {
-  padding: 0 2em;
-}
-
 header,
 main,
 footer {
   max-width: 40em;
+  padding: 0 1.5em;
   margin: auto;
 }
 
