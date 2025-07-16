@@ -41,7 +41,14 @@ export default function RootLayout({
           <Theme accentColor='cyan' grayColor='slate' radius='large'>
             <Container asChild pt='6'>
               <motion.header>
-                <Heading as='h1' size='8'>
+                <Heading
+                  as='h1'
+                  size={{
+                    initial: '5',
+                    sm: '6',
+                    md: '8',
+                  }}
+                >
                   <CharacterFade>Tacoma Wedge Historic District</CharacterFade>
                 </Heading>
               </motion.header>

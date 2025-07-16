@@ -2,13 +2,15 @@
 @import url('@radix-ui/themes/styles.css');
 
 body {
-  padding: 0 2em;
+  // padding: 0 2em;
+  font-size: 14px;
 }
 
 header,
 main,
 footer {
   max-width: 40em;
+  padding: 0 1.5em;
   margin: auto;
 }
 
