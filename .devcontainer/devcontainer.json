@@ -4,8 +4,8 @@
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "yarn install",
-  "postCreateCommand": "yarn build",
+  "updateContentCommand": "yarn install && yarn build",
+  "postCreateCommand": "",
   "postAttachCommand": {
     "server": "yarn start"
   },
