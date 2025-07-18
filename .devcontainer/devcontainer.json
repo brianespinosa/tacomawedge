@@ -1,14 +1,9 @@
 {
-  "image": "mcr.microsoft.com/devcontainers/universal:2",
-  "hostRequirements": {
-    "cpus": 4
-  },
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:0-22",
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "yarn install && yarn build",
+  "updateContentCommand": "yarn install",
   "postCreateCommand": "",
-  "postAttachCommand": {
-    "server": "yarn start"
-  },
+  "postAttachCommand": "yarn start",
   "customizations": {
     "codespaces": {
       "openFiles": ["src/app/page.tsx"]
