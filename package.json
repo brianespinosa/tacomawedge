@@ -9,7 +9,7 @@
     "pretty": "prettier --write .",
     "open-browser": "open http://localhost:3000",
     "serve": "next start",
-    "start": "yarn open-browser && next dev --turbopack",
+    "start": "next dev --turbopack",
     "test": "jest",
     "test:watch": "jest --watch"
   },
