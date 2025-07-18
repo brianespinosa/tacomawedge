@@ -6,7 +6,21 @@ import { ThemeProvider } from 'next-themes';
 import * as motion from 'motion/react-client';
 
 import CharacterFade from '@/components/CharacterFade';
-import { Container, Heading, Theme } from '@radix-ui/themes';
+import ExternalLink from '@/components/ExternalLink';
+import { facebook, instagram } from '@/components/icons';
+import InsetImage from '@/components/InsetImage';
+import Section from '@/components/Section';
+import wedgehistmap from '@/img/wedgehistmap.jpg';
+import {
+  Container,
+  Flex,
+  Grid,
+  Heading,
+  IconButton,
+  Separator,
+  Theme,
+  VisuallyHidden,
+} from '@radix-ui/themes';
 import { Analytics } from '@vercel/analytics/react';
 
 const DETAILS = {
@@ -49,20 +63,32 @@ export default function RootLayout({
     <html lang='en-US' suppressHydrationWarning>
       <body>
         <ThemeProvider attribute='class'>
-          <Theme accentColor='cyan' grayColor='slate' radius='large'>
+          <Theme accentColor='cyan' grayColor='slate' radius='medium'>
             <Container asChild pt='6'>
-              <motion.header>
-                <Heading
-                  as='h1'
-                  size={{
-                    initial: '5',
-                    sm: '6',
-                    md: '8',
-                  }}
-                >
-                  <CharacterFade>Tacoma Wedge Historic District</CharacterFade>
-                </Heading>
-              </motion.header>
+              <header>
+                <Grid columns='2fr 1fr' gap='6' align='center'>
+                  <Heading
+                    as='h1'
+                    size={{
+                      initial: '5',
+                      sm: '8',
+                    }}
+                  >
+                    <CharacterFade>
+                      Tacoma Wedge Historic District
+                    </CharacterFade>
+                  </Heading>
+                  <Section>
+                    <VisuallyHidden>
+                      <Heading as='h2'>Map</Heading>
+                    </VisuallyHidden>
+                    <InsetImage
+                      src={wedgehistmap}
+                      alt='Wedge Historic District Map'
+                    />
+                  </Section>
+                </Grid>
+              </header>
             </Container>
             <Container asChild>
               <motion.main
@@ -72,6 +98,51 @@ export default function RootLayout({
               >
                 {children}
               </motion.main>
+            </Container>
+            <Container asChild>
+              <footer>
+                <Grid
+                  columns={{ initial: '1', sm: '2fr 1fr' }}
+                  gap={{ initial: '0', sm: '6' }}
+                >
+                  <Section>
+                    <Heading as='h2'>
+                      <CharacterFade>Related Links</CharacterFade>
+                    </Heading>
+                    <ul>
+                      <li>
+                        <ExternalLink href='https://www.nps.gov/nr/feature/places/16000856.htm'>
+                          National Register of Historic Places Program - NPS
+                        </ExternalLink>
+                      </li>
+                      <li>
+                        <ExternalLink href='https://tacoma.gov/government/departments/planning-and-development-services/historic-preservation/tacomas-historic-districts-landmarks/#wedge-neighborhood-historic-district'>
+                          Tacoma&apos;s Historic Districts - City of Tacoma
+                        </ExternalLink>
+                      </li>
+                    </ul>
+                  </Section>
+
+                  <Section>
+                    <Heading as='h2'>
+                      <CharacterFade>Social</CharacterFade>
+                    </Heading>
+                    <Flex align='center' gap='4' py='3'>
+                      <IconButton asChild variant='ghost'>
+                        <ExternalLink href='https://www.instagram.com/tacomawedge/'>
+                          {instagram}
+                        </ExternalLink>
+                      </IconButton>
+                      <Separator orientation='vertical' size='2' />
+                      <IconButton asChild variant='ghost'>
+                        <ExternalLink href='https://www.facebook.com/tacomawedge/'>
+                          {facebook}
+                        </ExternalLink>
+                      </IconButton>
+                    </Flex>
+                  </Section>
+                </Grid>
+              </footer>
             </Container>
             <Analytics />
           </Theme>
