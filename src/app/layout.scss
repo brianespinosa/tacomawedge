@@ -9,6 +9,17 @@ footer {
   margin: auto;
 }
 
+h1 a {
+  color: var(--accent-a11);
+  text-decoration: none;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--accent-a11);
+  margin: var(--space-6) 0;
+}
+
 figure,
 img {
   max-width: 100%;
@@ -20,15 +31,17 @@ img {
   }
 }
 
-ol,
-ul {
-  padding-inline-start: 1.5em;
+section {
+  ol,
+  ul {
+    padding-inline-start: 1.5em;
 
-  li + li {
-    margin-block-start: 0.75em;
-  }
+    li + li {
+      margin-block-start: 0.75em;
+    }
 
-  &:last-child {
-    margin-block-end: 0;
+    &:last-child {
+      margin-block-end: 0;
+    }
   }
 }

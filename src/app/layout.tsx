@@ -2,6 +2,7 @@ import './layout.scss';
 
 import { ReactElement } from 'react';
 import { Metadata } from 'next';
+import Link from 'next/link';
 import { ThemeProvider } from 'next-themes';
 import * as motion from 'motion/react-client';
 
@@ -9,6 +10,7 @@ import CharacterFade from '@/components/CharacterFade';
 import ExternalLink from '@/components/ExternalLink';
 import { facebook, instagram } from '@/components/icons';
 import InsetImage from '@/components/InsetImage';
+import Nav from '@/components/Nav';
 import Section from '@/components/Section';
 import wedgehistmap from '@/img/wedgehistmap.jpg';
 import {
@@ -74,22 +76,29 @@ export default function RootLayout({
                       sm: '8',
                     }}
                   >
-                    <CharacterFade>
-                      Tacoma Wedge Historic District
-                    </CharacterFade>
+                    <Link href='/'>
+                      <CharacterFade>
+                        Tacoma Wedge Historic District
+                      </CharacterFade>
+                    </Link>
                   </Heading>
                   <Section>
                     <VisuallyHidden>
-                      <Heading as='h2'>Map</Heading>
+                      <Link href='/'>
+                        <Heading as='h2'>Map</Heading>
+                      </Link>
                     </VisuallyHidden>
-                    <InsetImage
-                      src={wedgehistmap}
-                      alt='Wedge Historic District Map'
-                    />
+                    <Link href='/'>
+                      <InsetImage
+                        src={wedgehistmap}
+                        alt='Wedge Historic District Map'
+                      />
+                    </Link>
                   </Section>
                 </Grid>
               </header>
             </Container>
+            <Nav />
             <Container asChild>
               <motion.main
                 variants={mainVariants}
@@ -106,7 +115,7 @@ export default function RootLayout({
                   gap={{ initial: '0', sm: '6' }}
                 >
                   <Section>
-                    <Heading as='h2'>
+                    <Heading as='h4' size='4'>
                       <CharacterFade>Related Links</CharacterFade>
                     </Heading>
                     <ul>
@@ -124,7 +133,7 @@ export default function RootLayout({
                   </Section>
 
                   <Section>
-                    <Heading as='h2'>
+                    <Heading as='h4' size='4'>
                       <CharacterFade>Social</CharacterFade>
                     </Heading>
                     <Flex align='center' gap='4' py='3'>
