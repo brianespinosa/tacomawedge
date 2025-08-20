@@ -4,14 +4,13 @@ import MdxHeading from './MdxHeading';
 
 // Mock @radix-ui/themes
 jest.mock('@radix-ui/themes', () => ({
-  Heading: ({ children, as, size, my, color, ...props }: any) => (
+  Heading: ({ children, as, size, my, color }: never) => (
     <div
       data-testid='radix-heading'
       data-as={as}
       data-size={size}
       data-my={my}
       data-color={color}
-      {...props}
     >
       {children}
     </div>
@@ -21,7 +20,7 @@ jest.mock('@radix-ui/themes', () => ({
 // Mock CharacterFade
 jest.mock('./CharacterFade', () => ({
   __esModule: true,
-  default: ({ children }: any) => (
+  default: ({ children }: never) => (
     <span data-testid='character-fade'>{children}</span>
   ),
 }));

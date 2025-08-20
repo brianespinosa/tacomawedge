@@ -5,15 +5,15 @@ import Nav from './Nav';
 // Mock radix-ui NavigationMenu
 jest.mock('radix-ui', () => ({
   NavigationMenu: {
-    Root: ({ children, ...props }: any) => <nav {...props}>{children}</nav>,
-    List: ({ children, ...props }: any) => <ul {...props}>{children}</ul>,
+    Root: ({ children }: never) => <nav>{children}</nav>,
+    List: ({ children }: never) => <ul>{children}</ul>,
   },
 }));
 
 // Mock NavLink
 jest.mock('./NavLink', () => ({
   __esModule: true,
-  default: ({ href, children }: any) => <a href={href}>{children}</a>,
+  default: ({ href, children }: never) => <a href={href}>{children}</a>,
 }));
 
 describe('Nav', () => {

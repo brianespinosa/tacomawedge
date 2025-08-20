@@ -8,6 +8,11 @@ const nextConfig = {
   //   viewTransition: true,
   // },
 
+  eslint: {
+    // We have lint being run during CI so we do not need lint to be run again during builds
+    ignoreDuringBuilds: true,
+  },
+
   poweredByHeader: false,
   reactStrictMode: true,
 };
