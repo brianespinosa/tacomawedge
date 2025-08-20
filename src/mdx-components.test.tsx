@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React, { JSX } from 'react';
 
 import { render, screen } from '@testing-library/react';
 
@@ -9,19 +9,27 @@ import { useMDXComponents } from './mdx-components';
 // Mock next/image
 jest.mock('next/image', () => ({
   __esModule: true,
-  default: (props: any) => <img {...props} />,
+  default: (props: JSX.IntrinsicElements['img']) => <img {...props} />,
   ImageProps: {},
 }));
 
 // Mock MdxFade and MdxHeading
 jest.mock('./components/MdxFade', () => ({
   __esModule: true,
-  default: ({ as = 'div', children, ...props }: any) =>
+  default: ({
+    as = 'div',
+    children,
+    ...props
+  }: JSX.IntrinsicElements['div'] & { as?: string }) =>
     React.createElement(as, props, children),
 }));
 jest.mock('./components/MdxHeading', () => ({
   __esModule: true,
-  default: ({ heading = 'h1', children, ...props }: any) =>
+  default: ({
+    heading = 'h1',
+    children,
+    ...props
+  }: JSX.IntrinsicElements['h1'] & { heading?: string }) =>
     React.createElement(heading, props, children),
 }));
 

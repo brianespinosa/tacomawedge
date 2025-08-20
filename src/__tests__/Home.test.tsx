@@ -6,7 +6,7 @@ import '@testing-library/jest-dom';
 
 describe('Home', () => {
   it('should not trigger a warning', () => {
-    var warn = jest.spyOn(globalThis.console, 'warn');
+    const warn = jest.spyOn(globalThis.console, 'warn');
 
     // Render the page
     render(<Home />);
@@ -20,7 +20,7 @@ describe('Home', () => {
   });
 
   it('should not trigger an error', () => {
-    var error = jest.spyOn(globalThis.console, 'error');
+    const error = jest.spyOn(globalThis.console, 'error');
 
     // Render the page
     render(<Home />);
@@ -34,7 +34,7 @@ describe('Home', () => {
   });
 
   it('should not log any messages', () => {
-    var log = jest.spyOn(globalThis.console, 'log');
+    const log = jest.spyOn(globalThis.console, 'log');
 
     // Render the page
     render(<Home />);

@@ -10,7 +10,7 @@ jest.mock('next/navigation', () => ({
 // Mock next/link
 jest.mock('next/link', () => ({
   __esModule: true,
-  default: ({ children, href }: any) => (
+  default: ({ children, href }: never) => (
     <a href={href} data-testid='next-link'>
       {children}
     </a>
@@ -20,14 +20,14 @@ jest.mock('next/link', () => ({
 // Mock radix-ui NavigationMenu
 jest.mock('radix-ui', () => ({
   NavigationMenu: {
-    Item: ({ children }: any) => <div data-testid='nav-item'>{children}</div>,
-    Link: ({ children }: any) => <div data-testid='nav-link'>{children}</div>,
+    Item: ({ children }: never) => <div data-testid='nav-item'>{children}</div>,
+    Link: ({ children }: never) => <div data-testid='nav-link'>{children}</div>,
   },
 }));
 
 // Mock @radix-ui/themes Button
 jest.mock('@radix-ui/themes', () => ({
-  Button: ({ children, variant, size, asChild }: any) => (
+  Button: ({ children, variant, size, asChild }: never) => (
     <button data-variant={variant} data-size={size} data-as-child={asChild}>
       {children}
     </button>

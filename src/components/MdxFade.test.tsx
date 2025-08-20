@@ -4,17 +4,17 @@ import MdxFade from './MdxFade';
 
 // Mock motion/react-client
 jest.mock('motion/react-client', () => ({
-  p: ({ children, variants }: any) => (
+  p: ({ children, variants }: never) => (
     <p data-testid='motion-p' data-variants={JSON.stringify(variants)}>
       {children}
     </p>
   ),
-  ul: ({ children, variants }: any) => (
+  ul: ({ children, variants }: never) => (
     <ul data-testid='motion-ul' data-variants={JSON.stringify(variants)}>
       {children}
     </ul>
   ),
-  ol: ({ children, variants }: any) => (
+  ol: ({ children, variants }: never) => (
     <ol data-testid='motion-ol' data-variants={JSON.stringify(variants)}>
       {children}
     </ol>
