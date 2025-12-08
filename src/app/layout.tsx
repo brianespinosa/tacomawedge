@@ -1,6 +1,5 @@
 import './layout.scss';
 
-import { ReactElement } from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { ThemeProvider } from 'next-themes';
