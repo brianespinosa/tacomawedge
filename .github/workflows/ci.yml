@@ -10,17 +10,10 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.ref_name != github.event.repository.default_branch }}
 
-permissions: write-all
+permissions:
+  contents: read
 
 jobs:
-  dependabot-automerge:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: fastify/github-action-merge-dependabot@v3
-        with:
-          use-github-auto-merge: true
-          target: 'minor'
-
   biome:
     runs-on: ubuntu-latest
     steps:
