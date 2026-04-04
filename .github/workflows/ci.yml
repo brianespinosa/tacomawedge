@@ -21,27 +21,27 @@ jobs:
           use-github-auto-merge: true
           target: 'minor'
 
-  lint:
+  biome:
     runs-on: ubuntu-latest
     steps:
-      - uses: brianespinosa/checkout-setup-node-install@main
-      - run: yarn lint
+      - uses: actions/checkout@v6.0.2
+      - uses: ./.github/actions/setup
+      - run: yarn biome ci .
 
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: brianespinosa/checkout-setup-node-install@main
+      - uses: actions/checkout@v6.0.2
+      - uses: ./.github/actions/setup
       - run: yarn test
-      # - uses: vebr/jest-lcov-reporter@v0.2.1
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
 
   build:
     runs-on: ubuntu-latest
     needs:
-      - lint
+      - biome
       - test
     steps:
-      - uses: brianespinosa/checkout-setup-node-install@main
+      - uses: actions/checkout@v6.0.2
+      - uses: ./.github/actions/setup
       - uses: brianespinosa/next-build-cache@main
       - run: yarn build

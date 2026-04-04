@@ -1,6 +1,5 @@
-import * as motion from 'motion/react-client';
-
 import { VisuallyHidden } from '@radix-ui/themes';
+import * as motion from 'motion/react-client';
 
 interface CharacterFadeProps {
   children: string;
@@ -26,7 +25,8 @@ const CharacterFade = ({ children }: CharacterFadeProps) => (
       transition={{ staggerChildren: 0.01, delayChildren: 0.5 }}
     >
       {[...children].map((char, index) => (
-        <motion.span key={index} variants={characterVariants}>
+        // biome-ignore lint/suspicious/noArrayIndexKey: character position is stable for string splitting
+        <motion.span key={`${index}-${char}`} variants={characterVariants}>
           {char}
         </motion.span>
       ))}

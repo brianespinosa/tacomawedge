@@ -1,17 +1,5 @@
 import './layout.scss';
 
-import { Metadata } from 'next';
-import Link from 'next/link';
-import { ThemeProvider } from 'next-themes';
-import * as motion from 'motion/react-client';
-
-import CharacterFade from '@/components/CharacterFade';
-import ExternalLink from '@/components/ExternalLink';
-import { facebook, instagram } from '@/components/icons';
-import InsetImage from '@/components/InsetImage';
-import Nav from '@/components/Nav';
-import Section from '@/components/Section';
-import wedgehistmap from '@/img/wedgehistmap.jpg';
 import {
   Container,
   Flex,
@@ -23,6 +11,17 @@ import {
   VisuallyHidden,
 } from '@radix-ui/themes';
 import { Analytics } from '@vercel/analytics/react';
+import * as motion from 'motion/react-client';
+import type { Metadata } from 'next';
+import Link from 'next/link';
+import { ThemeProvider } from 'next-themes';
+import CharacterFade from '@/components/CharacterFade';
+import ExternalLink from '@/components/ExternalLink';
+import InsetImage from '@/components/InsetImage';
+import { facebook, instagram } from '@/components/icons';
+import Nav from '@/components/Nav';
+import Section from '@/components/Section';
+import wedgehistmap from '@/img/wedgehistmap.jpg';
 
 const DETAILS = {
   title: 'Tacoma Wedge Historic District',

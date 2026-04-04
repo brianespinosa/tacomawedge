@@ -3,7 +3,9 @@
 exports[`Icons renders the Facebook icon 1`] = `
 <div>
   <svg
+    aria-label="Facebook"
     fill="currentColor"
+    role="img"
     style="width: 24px; height: 24px;"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +20,9 @@ exports[`Icons renders the Facebook icon 1`] = `
 exports[`Icons renders the Instagram icon 1`] = `
 <div>
   <svg
+    aria-label="Instagram"
     fill="currentColor"
+    role="img"
     style="width: 24px; height: 24px;"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"
@@ -35,7 +39,9 @@ exports[`Icons renders the Instagram icon 1`] = `
 exports[`Icons renders the Twitter icon 1`] = `
 <div>
   <svg
+    aria-label="Twitter"
     fill="currentColor"
+    role="img"
     style="width: 24px; height: 24px;"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"

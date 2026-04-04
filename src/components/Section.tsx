@@ -1,8 +1,11 @@
-import styles from './Section.module.scss';
+import {
+  Card,
+  Section as RxSection,
+  type SectionProps,
+} from '@radix-ui/themes';
 
 import * as motion from 'motion/react-client';
-
-import { Card, Section as RxSection, SectionProps } from '@radix-ui/themes';
+import styles from './Section.module.scss';
 
 const sectionVariant = {
   hidden: { opacity: 0, filter: 'blur(.5em)', y: '1em' },

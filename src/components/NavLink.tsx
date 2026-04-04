@@ -1,11 +1,10 @@
 'use client';
 
-import { ReactNode } from 'react';
+import { Button } from '@radix-ui/themes';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { NavigationMenu } from 'radix-ui';
-
-import { Button } from '@radix-ui/themes';
+import type { ReactNode } from 'react';
 
 interface NavLinkProps {
   href: string;

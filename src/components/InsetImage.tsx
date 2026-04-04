@@ -1,7 +1,5 @@
-import React from 'react';
-import Image, { type ImageProps } from 'next/image';
-
 import { Inset } from '@radix-ui/themes';
+import Image, { type ImageProps } from 'next/image';
 
 const InsetImage = (imgProps: ImageProps) => {
   return (

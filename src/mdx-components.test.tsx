@@ -1,13 +1,13 @@
-/* eslint-disable @next/next/no-img-element */
-import React, { JSX } from 'react';
-
 import { render, screen } from '@testing-library/react';
+import React, { type JSX } from 'react';
 
 import { useMDXComponents } from './mdx-components';
 
 // Mock next/image
 jest.mock('next/image', () => ({
   __esModule: true,
+  // biome-ignore lint/performance/noImgElement: test mock for next/image
+  // biome-ignore lint/a11y/useAltText: alt is passed via props spread in this next/image mock
   default: (props: JSX.IntrinsicElements['img']) => <img {...props} />,
   ImageProps: {},
 }));

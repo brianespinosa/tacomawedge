@@ -1,6 +1,4 @@
-import React from 'react';
-
-import { Link, LinkProps } from '@radix-ui/themes';
+import { Link, type LinkProps } from '@radix-ui/themes';
 
 const ExternalLink = ({ children, href, ...rest }: LinkProps) => {
   return (

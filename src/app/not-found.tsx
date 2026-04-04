@@ -1,8 +1,7 @@
-import { Metadata } from 'next';
-import NextLink from 'next/link';
-
-import Section from '@/components/Section';
 import { Button, Heading } from '@radix-ui/themes';
+import type { Metadata } from 'next';
+import NextLink from 'next/link';
+import Section from '@/components/Section';
 
 export const metadata: Metadata = {
   title: 'Not Found',
