@@ -9,7 +9,8 @@
     "serve": "next start",
     "start": "next dev --turbopack",
     "test": "jest",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "typecheck": "tsc --noEmit"
   },
   "browserslist": {
     "production": [
