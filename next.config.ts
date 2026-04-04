@@ -7,8 +7,6 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
 };
 
-const withMDX = createMDX({
-  extension: /\.(md|mdx)$/,
-});
+const withMDX = createMDX();
 
 export default withMDX(nextConfig);

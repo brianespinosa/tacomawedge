@@ -5,9 +5,9 @@
   "scripts": {
     "build": "next build --turbopack",
     "check": "biome check --write .",
+    "dev": "next dev --turbopack",
     "open-browser": "open http://localhost:3000",
-    "serve": "next start",
-    "start": "next dev --turbopack",
+    "start": "next start",
     "test": "jest",
     "test:watch": "jest --watch",
     "typecheck": "tsc --noEmit"
