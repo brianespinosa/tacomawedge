@@ -1,6 +1,5 @@
-import styles from './Nav.module.scss';
-
 import { NavigationMenu } from 'radix-ui';
+import styles from './Nav.module.scss';
 
 import NavLink from './NavLink';
 

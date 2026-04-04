@@ -1,5 +1,5 @@
-import Image, { ImageProps } from 'next/image';
 import type { MDXComponents } from 'mdx/types';
+import Image, { type ImageProps } from 'next/image';
 
 import MdxFade from './components/MdxFade';
 import MdxHeading from './components/MdxHeading';

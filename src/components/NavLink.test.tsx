@@ -28,7 +28,12 @@ jest.mock('radix-ui', () => ({
 // Mock @radix-ui/themes Button
 jest.mock('@radix-ui/themes', () => ({
   Button: ({ children, variant, size, asChild }: never) => (
-    <button data-variant={variant} data-size={size} data-as-child={asChild}>
+    <button
+      type='button'
+      data-variant={variant}
+      data-size={size}
+      data-as-child={asChild}
+    >
       {children}
     </button>
   ),

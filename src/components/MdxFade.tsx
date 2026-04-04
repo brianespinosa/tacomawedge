@@ -17,8 +17,14 @@ const fadeVariant = {
   },
 };
 
+const componentMap = {
+  p: motion.p,
+  ul: motion.ul,
+  ol: motion.ol,
+};
+
 const MdxFade = ({ children, as }: MdxFadeProps) => {
-  const FadeComponent = motion[as];
+  const FadeComponent = componentMap[as];
 
   return <FadeComponent variants={fadeVariant}>{children}</FadeComponent>;
 };
