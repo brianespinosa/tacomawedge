@@ -17,7 +17,7 @@ two separate issues make it unsuitable for our setup:
    yet enabled, this invokes the system Yarn (v1) rather than the project-pinned
    version, producing an incorrect cache path or failing outright.
    - Reference: [actions/setup-node#1027](https://github.com/actions/setup-node/issues/1027)
-   - Proposed fix (unmerged as of 2026): [actions/setup-node#1479](https://github.com/actions/setup-node/pull/1479)
+   - Proposed fix (unmerged): [actions/setup-node#1479](https://github.com/actions/setup-node/pull/1479)
 
 2. **v6 restricts automatic caching to npm only**: `actions/setup-node@v6`
    introduced a breaking change that disables automatic caching for all package
