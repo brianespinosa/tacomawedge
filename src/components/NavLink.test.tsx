@@ -46,10 +46,10 @@ describe('NavLink', () => {
     expect(screen.getByText('Test Link')).toBeInTheDocument();
   });
 
-  it('uses solid variant when pathname matches href', () => {
+  it('uses soft variant when pathname matches href', () => {
     render(<NavLink href='/test'>Active Link</NavLink>);
     const button = screen.getByRole('button');
-    expect(button).toHaveAttribute('data-variant', 'solid');
+    expect(button).toHaveAttribute('data-variant', 'soft');
   });
 
   it('uses outline variant when pathname does not match href', () => {
