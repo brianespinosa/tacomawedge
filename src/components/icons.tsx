@@ -1,4 +1,4 @@
-export const iconStyle = {
+const iconStyle = {
   width: '24px',
   height: '24px',
 };
