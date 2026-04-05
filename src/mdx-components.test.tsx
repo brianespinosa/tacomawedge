@@ -37,10 +37,13 @@ describe('mdx-components', () => {
   const components = useMDXComponents();
 
   it('renders custom heading components', () => {
-    const { container } = render(
-      React.createElement(components.h2, null, 'Heading 2'),
-    );
-    expect(container.querySelector('h2')).toHaveTextContent('Heading 2');
+    for (const level of [1, 2, 3, 4, 5, 6] as const) {
+      const tag = `h${level}` as const;
+      const { container } = render(
+        React.createElement(components[tag], null, `Heading ${level}`),
+      );
+      expect(container.querySelector(tag)).toHaveTextContent(`Heading ${level}`);
+    }
   });
 
   it('renders custom fade paragraph', () => {
