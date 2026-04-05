@@ -113,7 +113,7 @@ export default function RootLayout({
                   gap={{ initial: '0', sm: '6' }}
                 >
                   <Section>
-                    <Heading as='h4' size='4'>
+                    <Heading as='h2' size='4'>
                       <CharacterFade>Related Links</CharacterFade>
                     </Heading>
                     <ul>
@@ -131,7 +131,7 @@ export default function RootLayout({
                   </Section>
 
                   <Section>
-                    <Heading as='h4' size='4'>
+                    <Heading as='h2' size='4'>
                       <CharacterFade>Social</CharacterFade>
                     </Heading>
                     <Flex align='center' gap='4' py='3'>
