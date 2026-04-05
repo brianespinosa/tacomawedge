@@ -19,6 +19,7 @@ const NavLink = ({ href, children }: NavLinkProps) => {
       <Button
         asChild
         color='cyan'
+        highContrast
         size='3'
         variant={pathname === href ? 'soft' : 'outline'}
       >
