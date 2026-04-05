@@ -42,7 +42,9 @@ describe('mdx-components', () => {
       const { container } = render(
         React.createElement(components[tag], null, `Heading ${level}`),
       );
-      expect(container.querySelector(tag)).toHaveTextContent(`Heading ${level}`);
+      expect(container.querySelector(tag)).toHaveTextContent(
+        `Heading ${level}`,
+      );
     }
   });
 

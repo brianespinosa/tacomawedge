@@ -19,7 +19,13 @@ export default defineConfig({
     coverage: {
       enabled: true,
       provider: 'v8',
-      exclude: ['.claude/**', 'node_modules/**', 'e2e/**', '**/*.scss', 'src/img/**'],
+      exclude: [
+        '.claude/**',
+        'node_modules/**',
+        'e2e/**',
+        '**/*.scss',
+        'src/img/**',
+      ],
       thresholds: {
         statements: 100,
         branches: 100,
