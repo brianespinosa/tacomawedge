@@ -9288,7 +9288,7 @@ __metadata:
     sass: "npm:1.99.0"
     sharp: "npm:0.34.5"
     typescript: "npm:5.9.3"
-    vercel: "npm:50.38.3"
+    vercel: "npm:50.39.0"
     vite: "npm:7.3.1"
     vitest: "npm:4.0.18"
   languageName: unknown
@@ -9714,9 +9714,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:50.38.3":
-  version: 50.38.3
-  resolution: "vercel@npm:50.38.3"
+"vercel@npm:50.39.0":
+  version: 50.39.0
+  resolution: "vercel@npm:50.39.0"
   dependencies:
     "@vercel/backends": "npm:0.0.55"
     "@vercel/blob": "npm:2.3.0"
@@ -9750,7 +9750,7 @@ __metadata:
   bin:
     vc: dist/vc.js
     vercel: dist/vc.js
-  checksum: 10/06e1ec0405bc10196f1817c8ac2b6536c77bc48d63386b040f24ec970219b68e485a583846321daa534499d50b31f7daabf61b173472bb53819ccbbe3aebeeaa
+  checksum: 10/e5d7d88f1e82ef40d5972b89e257b518bff01f8c0dc554138b3508670aec813594f3f2235975acbdb1604d192246b678cc15c2da9075442b2b181c5a1e1345d5
   languageName: node
   linkType: hard
 
