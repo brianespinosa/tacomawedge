@@ -1,8 +1,7 @@
 import { render } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 
 import Section from './Section';
-
-import '@testing-library/jest-dom';
 
 describe('Section component', () => {
   it('renders children correctly', () => {

@@ -1,14 +1,15 @@
 import { render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 
 import NavLink from './NavLink';
 
 // Mock next/navigation
-jest.mock('next/navigation', () => ({
+vi.mock('next/navigation', () => ({
   usePathname: () => '/test',
 }));
 
 // Mock next/link
-jest.mock('next/link', () => ({
+vi.mock('next/link', () => ({
   __esModule: true,
   default: ({ children, href }: never) => (
     <a href={href} data-testid='next-link'>
@@ -18,7 +19,7 @@ jest.mock('next/link', () => ({
 }));
 
 // Mock radix-ui NavigationMenu
-jest.mock('radix-ui', () => ({
+vi.mock('radix-ui', () => ({
   NavigationMenu: {
     Item: ({ children }: never) => <div data-testid='nav-item'>{children}</div>,
     Link: ({ children }: never) => <div data-testid='nav-link'>{children}</div>,
@@ -26,7 +27,7 @@ jest.mock('radix-ui', () => ({
 }));
 
 // Mock @radix-ui/themes Button
-jest.mock('@radix-ui/themes', () => ({
+vi.mock('@radix-ui/themes', () => ({
   Button: ({ children, variant, size, asChild }: never) => (
     <button
       type='button'

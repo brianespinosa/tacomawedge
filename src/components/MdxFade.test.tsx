@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 
 import MdxFade from './MdxFade';
 
 // Mock motion/react-client
-jest.mock('motion/react-client', () => ({
+vi.mock('motion/react-client', () => ({
   p: ({ children, variants }: never) => (
     <p data-testid='motion-p' data-variants={JSON.stringify(variants)}>
       {children}
