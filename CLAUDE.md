@@ -41,6 +41,18 @@ When making code changes, you MUST proactively suggest updates to relevant docum
 
 Do not wait for the user to ask about documentation. Identify when your changes have made documentation stale and suggest specific updates.
 
+### Worktrees
+
+**REQUIRED**: All issue work MUST be done in a git worktree, not on the main working tree.
+
+Start a worktree session using Claude's built-in flag:
+
+```
+claude --worktree <issue-name>
+```
+
+This creates an isolated checkout at `.claude/worktrees/<issue-name>` on its own branch, so multiple issues can be worked in parallel without conflict. Claude will prompt to keep or clean up the worktree on exit.
+
 ### Git Workflow
 
 All commit messages MUST follow [Conventional Commits](https://www.conventionalcommits.org/) syntax:
@@ -77,6 +89,10 @@ Common types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `ci`
 - Before creating files or directories, identify the repository root with `git rev-parse --show-toplevel`
 - NEVER create files outside the repository boundary - they will not be version controlled
 - Use `git status` to confirm new files will be tracked by git
+
+### Yarn Install Warnings
+
+`yarn install` may produce warnings. All warnings MUST be resolved before closing any PR — investigate the cause and fix it (e.g. add or remove a `packageExtensions` entry in `.yarnrc.yml`, pin a transitive dependency, or update the offending package).
 
 ### Architecture Decision Records (ADRs)
 

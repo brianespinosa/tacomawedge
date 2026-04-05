@@ -19,9 +19,12 @@ export default defineConfig({
     coverage: {
       enabled: true,
       provider: 'v8',
-      exclude: ['node_modules/**', 'e2e/**'],
+      exclude: ['.claude/**', 'node_modules/**', 'e2e/**'],
       thresholds: {
-        lines: 75,
+        statements: 100,
+        branches: 100,
+        functions: 100,
+        lines: 100,
       },
     },
   },

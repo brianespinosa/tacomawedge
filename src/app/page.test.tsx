@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import type { JSX } from 'react';
 import { describe, expect, it, vi } from 'vitest';
 
-import Home from '../app/page';
+import Home from './page';
 
 // Mock next/image — Vite returns PNG imports as URL strings, not Next.js image
 // objects, so the component would throw "missing required width property" without this.

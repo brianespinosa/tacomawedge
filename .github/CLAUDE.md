@@ -26,13 +26,9 @@ The `build` job requires three repository secrets: `VERCEL_TOKEN`, `VERCEL_ORG_I
 
 `VERCEL_BYPASS_SECRET` is used by the `e2e` job to bypass Vercel deployment protection when running tests.
 
-## e2e Tests
+## E2E Coverage Policy
 
-Config: `playwright.config.ts`, tests: `e2e/`
-
-Tests run against a live Vercel deployment URL (`PLAYWRIGHT_BASE_URL`). They do not run against `next dev` or `next start`. See `e2e/CLAUDE.md` for selector strategy and test file documentation.
-
-`PLAYWRIGHT_BASE_URL` is also set to a dummy value in the `knip` job so that importing `playwright.config.ts` does not throw during dead code analysis.
+Any new user-facing feature must have a corresponding e2e spec added or updated before the PR is merged. Document the spec in the PR description's test plan section.
 
 ## Dependabot
 

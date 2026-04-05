@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 
-import NotFound from '../app/not-found';
+import NotFound from './not-found';
 
 describe('NotFound', () => {
   it('should not trigger a warning', () => {
