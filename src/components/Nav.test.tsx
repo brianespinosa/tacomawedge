@@ -1,9 +1,10 @@
 import { render, screen } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 
 import Nav from './Nav';
 
 // Mock radix-ui NavigationMenu
-jest.mock('radix-ui', () => ({
+vi.mock('radix-ui', () => ({
   NavigationMenu: {
     Root: ({ children }: never) => <nav>{children}</nav>,
     List: ({ children }: never) => <ul>{children}</ul>,
@@ -11,7 +12,7 @@ jest.mock('radix-ui', () => ({
 }));
 
 // Mock NavLink
-jest.mock('./NavLink', () => ({
+vi.mock('./NavLink', () => ({
   __esModule: true,
   default: ({ href, children }: never) => <a href={href}>{children}</a>,
 }));

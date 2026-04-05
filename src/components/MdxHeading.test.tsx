@@ -1,9 +1,10 @@
 import { render } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 
 import MdxHeading from './MdxHeading';
 
 // Mock @radix-ui/themes
-jest.mock('@radix-ui/themes', () => ({
+vi.mock('@radix-ui/themes', () => ({
   Heading: ({ children, as, size, my, color }: never) => (
     <div
       data-testid='radix-heading'
@@ -18,7 +19,7 @@ jest.mock('@radix-ui/themes', () => ({
 }));
 
 // Mock CharacterFade
-jest.mock('./CharacterFade', () => ({
+vi.mock('./CharacterFade', () => ({
   __esModule: true,
   default: ({ children }: never) => (
     <span data-testid='character-fade'>{children}</span>

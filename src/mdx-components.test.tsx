@@ -1,10 +1,11 @@
 import { render, screen } from '@testing-library/react';
 import React, { type JSX } from 'react';
+import { describe, expect, it, vi } from 'vitest';
 
 import { useMDXComponents } from './mdx-components';
 
 // Mock next/image
-jest.mock('next/image', () => ({
+vi.mock('next/image', () => ({
   __esModule: true,
   // biome-ignore lint/performance/noImgElement: test mock for next/image
   // biome-ignore lint/a11y/useAltText: alt is passed via props spread in this next/image mock
@@ -13,7 +14,7 @@ jest.mock('next/image', () => ({
 }));
 
 // Mock MdxFade and MdxHeading
-jest.mock('./components/MdxFade', () => ({
+vi.mock('./components/MdxFade', () => ({
   __esModule: true,
   default: ({
     as = 'div',
@@ -22,7 +23,7 @@ jest.mock('./components/MdxFade', () => ({
   }: JSX.IntrinsicElements['div'] & { as?: string }) =>
     React.createElement(as, props, children),
 }));
-jest.mock('./components/MdxHeading', () => ({
+vi.mock('./components/MdxHeading', () => ({
   __esModule: true,
   default: ({
     heading = 'h1',

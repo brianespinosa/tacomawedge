@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Icons renders the Facebook icon 1`] = `
+exports[`Icons > renders the Facebook icon 1`] = `
 <div>
   <svg
     aria-label="Facebook"
@@ -17,7 +17,7 @@ exports[`Icons renders the Facebook icon 1`] = `
 </div>
 `;
 
-exports[`Icons renders the Instagram icon 1`] = `
+exports[`Icons > renders the Instagram icon 1`] = `
 <div>
   <svg
     aria-label="Instagram"
@@ -36,7 +36,7 @@ exports[`Icons renders the Instagram icon 1`] = `
 </div>
 `;
 
-exports[`Icons renders the Twitter icon 1`] = `
+exports[`Icons > renders the Twitter icon 1`] = `
 <div>
   <svg
     aria-label="Twitter"
