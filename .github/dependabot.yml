@@ -1,31 +1,20 @@
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
 version: 2
 updates:
-  - package-ecosystem: gitsubmodule
-    schedule:
-      interval: 'daily'
-      time: '03:00'
-      timezone: 'America/New_York'
+  - package-ecosystem: github-actions
     directory: /
-
-  # TODO: Go through and chunk updates into different groups by day so we do not block everything behind one big update
+    schedule:
+      interval: daily
+    rebase-strategy: auto
+    commit-message:
+      prefix: chore
+      include: scope
 
   - package-ecosystem: npm
-    rebase-strategy: 'auto'
-    directory: '/'
+    directory: /
     schedule:
-      interval: 'daily'
-    open-pull-requests-limit: 1
-    ignore:
-      - dependency-name: '*'
-        versions: ['version-update:semver-major']
-      - dependency-name: 'eslint-plugin-unicorn' # Temporarily ignore this plugin until eslint support for flat file config
-        versions: ['*']
-      - dependency-name: 'typescript' # This is likely to conflight with peer dependencies and stop the whole dependency update process
-        versions: ['*']
-
-    groups:
-      dependencies:
-        patterns:
-          - '*'
+      interval: daily
+    rebase-strategy: auto
+    target-branch: main
+    commit-message:
+      prefix: chore
+      include: scope
