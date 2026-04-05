@@ -6,6 +6,7 @@
     "build": "next build --turbopack",
     "check": "biome check --write .",
     "dev": "next dev --turbopack",
+    "e2e": "playwright test",
     "knip": "knip",
     "open-browser": "open http://localhost:3000",
     "start": "next start",
@@ -37,10 +38,12 @@
     "react-dom": "19.2.4"
   },
   "devDependencies": {
+    "@axe-core/playwright": "4.11.1",
     "@biomejs/biome": "2.4.10",
     "@mdx-js/loader": "3.1.1",
     "@mdx-js/react": "3.1.1",
     "@next/mdx": "16.0.7",
+    "@playwright/test": "1.59.1",
     "@testing-library/dom": "10.4.1",
     "@testing-library/jest-dom": "6.9.1",
     "@testing-library/react": "16.3.0",
@@ -55,6 +58,7 @@
     "sass": "1.94.2",
     "sharp": "0.34.5",
     "typescript": "5.9.3",
+    "vercel": "50.38.3",
     "vite": "7.3.1",
     "vitest": "4.0.18"
   },

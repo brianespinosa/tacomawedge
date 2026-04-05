@@ -14,10 +14,25 @@ Config: `.github/workflows/ci.yml`
 
 Runs on push and pull request to `main`. Jobs:
 
-- **biome**, **typecheck**, and **test** run in parallel on all events.
-- **build** runs after all three pass — runs `yarn build` with Turbopack, using `brianespinosa/next-build-cache@main` for caching.
+- **biome**, **knip**, **typecheck**, and **test** run in parallel on all events.
+- **build** runs after all four pass — deploys to Vercel (preview on PR, production on `main`), outputs the deployment URL. Uses `brianespinosa/next-build-cache@main` for build caching.
+- **e2e** runs on pull requests only, after `build` — runs Playwright tests against the Vercel preview URL. Caches Playwright browsers by version. Uploads the HTML report as an artifact (30-day retention).
 
 Concurrency is configured to cancel in-progress runs on PRs when new commits are pushed. Runs on `main` are never cancelled.
+
+## Vercel Deployment
+
+The `build` job requires three repository secrets: `VERCEL_TOKEN`, `VERCEL_ORG_ID`, `VERCEL_PROJECT_ID`. On PRs it deploys a preview; on `main` it deploys to production. The deployment URL is passed to the `e2e` job via job outputs.
+
+`VERCEL_BYPASS_SECRET` is used by the `e2e` job to bypass Vercel deployment protection when running tests.
+
+## e2e Tests
+
+Config: `playwright.config.ts`, tests: `e2e/`
+
+Tests run against a live Vercel deployment URL (`PLAYWRIGHT_BASE_URL`). They do not run against `next dev` or `next start`. See `e2e/CLAUDE.md` for selector strategy and test file documentation.
+
+`PLAYWRIGHT_BASE_URL` is also set to a dummy value in the `knip` job so that importing `playwright.config.ts` does not throw during dead code analysis.
 
 ## Dependabot
 

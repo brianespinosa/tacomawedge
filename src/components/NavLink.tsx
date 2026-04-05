@@ -18,8 +18,10 @@ const NavLink = ({ href, children }: NavLinkProps) => {
     <NavigationMenu.Item>
       <Button
         asChild
+        color='cyan'
+        highContrast
         size='3'
-        variant={pathname === href ? 'solid' : 'outline'}
+        variant={pathname === href ? 'soft' : 'outline'}
       >
         <NavigationMenu.Link asChild>
           <Link href={href}>{children}</Link>

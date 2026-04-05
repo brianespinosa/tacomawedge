@@ -1,6 +1,12 @@
 import type { KnipConfig } from 'knip';
 
 const config: KnipConfig = {
+  ignore: [
+    // Git worktrees used by Claude Code are checked out under .claude/worktrees/.
+    // Knip would otherwise scan them and report false positives.
+    '.claude/**',
+  ],
+
   ignoreDependencies: [
     // Imported via @import url('normalize.css') in src/app/layout.scss.
     // knip does not parse SCSS files, so the reference is invisible to static analysis.
