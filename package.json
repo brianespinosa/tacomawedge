@@ -29,6 +29,9 @@
       "not dead"
     ]
   },
+  "resolutions": {
+    "@vercel/fun/tar": ">=7.5.11"
+  },
   "dependencies": {
     "@radix-ui/themes": "3.3.0",
     "@vercel/analytics": "2.0.1",
