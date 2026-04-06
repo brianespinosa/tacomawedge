@@ -2,11 +2,11 @@
 
 # claude
 .claude/settings.local.json
+.claude/worktrees/
 
 # dependencies
 /node_modules
 /.pnp
-.pnp.js
 
 # testing
 /coverage
@@ -30,13 +30,17 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# local env files
-.env*.local
+# env files (can opt-in for committing if needed)
+.env*
 
 # vercel
 .vercel
 
-# yarn - Not using Zero Installs
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# yarn - Zero Installs not used; releases committed for reproducibility
 # https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
 .pnp.*
 .yarn/*
