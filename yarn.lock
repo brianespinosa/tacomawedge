@@ -6430,18 +6430,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"knip@npm:6.5.0":
-  version: 6.5.0
-  resolution: "knip@npm:6.5.0"
+"knip@npm:6.6.0":
+  version: 6.6.0
+  resolution: "knip@npm:6.6.0"
   dependencies:
-    "@nodelib/fs.walk": "npm:^1.2.3"
+    fdir: "npm:^6.5.0"
     formatly: "npm:^0.3.0"
     get-tsconfig: "npm:4.14.0"
     jiti: "npm:^2.6.0"
     minimist: "npm:^1.2.8"
     oxc-parser: "npm:^0.126.0"
     oxc-resolver: "npm:^11.19.1"
-    picocolors: "npm:^1.1.1"
     picomatch: "npm:^4.0.4"
     smol-toml: "npm:^1.6.1"
     strip-json-comments: "npm:5.0.3"
@@ -6452,7 +6451,7 @@ __metadata:
   bin:
     knip: bin/knip.js
     knip-bun: bin/knip-bun.js
-  checksum: 10/c90c5b589f3f558fc8ca6a211a472eb3051bdbac3893833a7445b85e9bf6aeb81c071ff9c39c33bc8189c3a71174db25726a00318139ff2b93e7223e4e5f29a6
+  checksum: 10/4f7e087973d5d5ce12f7f0898589da7fb636cf9653744c8adc838fe7689936dd53ba24764cafaedec3a106847ba04aaa55f9fa928089e444056319432e8e4385
   languageName: node
   linkType: hard
 
@@ -9091,7 +9090,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:5.1.4"
     "@vitest/coverage-v8": "npm:4.0.18"
     happy-dom: "npm:20.9.0"
-    knip: "npm:6.5.0"
+    knip: "npm:6.6.0"
     lefthook: "npm:2.1.6"
     motion: "npm:12.38.0"
     next: "npm:16.2.4"
