@@ -6439,9 +6439,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"knip@npm:6.11.0":
-  version: 6.11.0
-  resolution: "knip@npm:6.11.0"
+"knip@npm:6.12.0":
+  version: 6.12.0
+  resolution: "knip@npm:6.12.0"
   dependencies:
     fdir: "npm:^6.5.0"
     formatly: "npm:^0.3.0"
@@ -6460,7 +6460,7 @@ __metadata:
   bin:
     knip: bin/knip.js
     knip-bun: bin/knip-bun.js
-  checksum: 10/783152e86de9e4a20c996f6c7f88559f355ab56bf17b8d55904ab8f80353374c9b790980b819f8545428b2c8f994907ac18efbade62d8fd1874d178e7fbcdda3
+  checksum: 10/e5b25ec488adcbfb5d90fc335f6a849431dd8dc24baf945e25438c15035d18a31cff64e8d6f7a78f862b34011e1c37da0e25828de51d5ec42e2a720a2390a9a9
   languageName: node
   linkType: hard
 
@@ -9099,7 +9099,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:5.1.4"
     "@vitest/coverage-v8": "npm:4.0.18"
     happy-dom: "npm:20.9.0"
-    knip: "npm:6.11.0"
+    knip: "npm:6.12.0"
     lefthook: "npm:2.1.6"
     motion: "npm:12.38.0"
     next: "npm:16.2.4"
