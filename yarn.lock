@@ -6331,12 +6331,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jiti@npm:^2.6.0":
-  version: 2.6.1
-  resolution: "jiti@npm:2.6.1"
+"jiti@npm:^2.7.0":
+  version: 2.7.0
+  resolution: "jiti@npm:2.7.0"
   bin:
     jiti: lib/jiti-cli.mjs
-  checksum: 10/8cd72c5fd03a0502564c3f46c49761090f6dadead21fa191b73535724f095ad86c2fa89ee6fe4bc3515337e8d406cc8fb2d37b73fa0c99a34584bac35cd4a4de
+  checksum: 10/6d75a8dbd61dbee031aa0937fabb748ff8ddf370b971958cc704f5cf26b4c5bdc9dcd0563059b2627a2bd41d946fa0bc64f912fdc8981ca7945a9d63c74ad0f9
   languageName: node
   linkType: hard
 
@@ -6439,14 +6439,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"knip@npm:6.12.0":
-  version: 6.12.0
-  resolution: "knip@npm:6.12.0"
+"knip@npm:6.12.1":
+  version: 6.12.1
+  resolution: "knip@npm:6.12.1"
   dependencies:
     fdir: "npm:^6.5.0"
     formatly: "npm:^0.3.0"
     get-tsconfig: "npm:4.14.0"
-    jiti: "npm:^2.6.0"
+    jiti: "npm:^2.7.0"
     minimist: "npm:^1.2.8"
     oxc-parser: "npm:^0.128.0"
     oxc-resolver: "npm:^11.19.1"
@@ -6460,7 +6460,7 @@ __metadata:
   bin:
     knip: bin/knip.js
     knip-bun: bin/knip-bun.js
-  checksum: 10/e5b25ec488adcbfb5d90fc335f6a849431dd8dc24baf945e25438c15035d18a31cff64e8d6f7a78f862b34011e1c37da0e25828de51d5ec42e2a720a2390a9a9
+  checksum: 10/584f472e08f229ea8404ecddefd8f4c9ca27f3de7f7234df87171efdd5d07f9823705054875335633e705442267adfce97f52a4ab4f8fc20410788bfb454ce9b
   languageName: node
   linkType: hard
 
@@ -9099,7 +9099,7 @@ __metadata:
     "@vitejs/plugin-react": "npm:5.1.4"
     "@vitest/coverage-v8": "npm:4.0.18"
     happy-dom: "npm:20.9.0"
-    knip: "npm:6.12.0"
+    knip: "npm:6.12.1"
     lefthook: "npm:2.1.6"
     motion: "npm:12.38.0"
     next: "npm:16.2.6"
