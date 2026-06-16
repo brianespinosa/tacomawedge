@@ -64,7 +64,7 @@
     "@types/react": "19.2.17",
     "@vitejs/plugin-react": "5.1.4",
     "@vitest/coverage-v8": "4.0.18",
-    "happy-dom": "20.10.3",
+    "happy-dom": "20.10.4",
     "knip": "6.17.1",
     "lefthook": "2.1.9",
     "sass": "1.101.0",
