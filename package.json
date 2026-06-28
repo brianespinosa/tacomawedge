@@ -50,7 +50,7 @@
     "react-dom": "19.2.7"
   },
   "devDependencies": {
-    "@axe-core/playwright": "4.11.3",
+    "@axe-core/playwright": "4.12.1",
     "@biomejs/biome": "2.5.0",
     "@mdx-js/loader": "3.1.1",
     "@mdx-js/react": "3.1.1",
