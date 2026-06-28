@@ -7,12 +7,7 @@ interface CharacterFadeProps {
 
 const characterVariants = {
   hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      y: { stiffness: 1000 },
-    },
-  },
+  show: { opacity: 1 },
 };
 
 const CharacterFade = ({ children }: CharacterFadeProps) => (
