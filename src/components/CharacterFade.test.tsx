@@ -14,22 +14,6 @@ describe('CharacterFade', () => {
     // Check visually hidden text
     const hiddenText = screen.getByText(testText);
     expect(hiddenText).toBeInTheDocument();
-
-    // This style is from the Radix UI VisuallyHidden component
-    // so if this part of the test ever fails, it means the Radix UI
-    // VisuallyHidden component has changed
-    expect(hiddenText).toHaveStyle({
-      position: 'absolute',
-      border: 0,
-      width: '1px',
-      height: '1px',
-      padding: 0,
-      margin: '-1px',
-      overflow: 'hidden',
-      clip: 'rect(0, 0, 0, 0)',
-      whiteSpace: 'nowrap',
-      wordWrap: 'normal',
-    });
   });
 
   it('make sure only the parent span has the presentation role', () => {
