@@ -37,7 +37,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     ...DETAILS,
-    images: '/wedgehistmap.jpg',
+    images: [
+      {
+        url: wedgehistmap.src,
+        width: wedgehistmap.width,
+        height: wedgehistmap.height,
+        alt: DETAILS.description,
+      },
+    ],
   },
   metadataBase: new URL('https://tacomawedge.org/'),
 };
@@ -80,16 +87,12 @@ export default function RootLayout({
                   </Heading>
                   <Section>
                     <VisuallyHidden>
-                      <Link href='/'>
-                        <Heading as='h2'>Map</Heading>
-                      </Link>
+                      <Heading as='h2'>Map</Heading>
                     </VisuallyHidden>
-                    <Link href='/'>
-                      <InsetImage
-                        src={wedgehistmap}
-                        alt='Wedge Historic District Map'
-                      />
-                    </Link>
+                    <InsetImage
+                      src={wedgehistmap}
+                      alt='Wedge Historic District Map'
+                    />
                   </Section>
                 </Grid>
               </header>

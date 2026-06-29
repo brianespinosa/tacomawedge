@@ -5,7 +5,6 @@ import {
 } from '@radix-ui/themes';
 
 import * as motion from 'motion/react-client';
-import styles from './Section.module.scss';
 
 const sectionVariant = {
   hidden: { opacity: 0, filter: 'blur(.5em)', y: '1em' },
@@ -21,7 +20,7 @@ const sectionVariant = {
 
 const Section = ({ children }: SectionProps) => {
   return (
-    <RxSection asChild className={styles._}>
+    <RxSection asChild>
       <Card
         asChild
         my={{ initial: '3', sm: '4' }}
