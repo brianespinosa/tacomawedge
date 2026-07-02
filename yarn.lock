@@ -1649,9 +1649,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/mdx@npm:16.2.9":
-  version: 16.2.9
-  resolution: "@next/mdx@npm:16.2.9"
+"@next/mdx@npm:16.2.10":
+  version: 16.2.10
+  resolution: "@next/mdx@npm:16.2.10"
   dependencies:
     source-map: "npm:^0.7.0"
   peerDependencies:
@@ -1662,7 +1662,7 @@ __metadata:
       optional: true
     "@mdx-js/react":
       optional: true
-  checksum: 10/0862a4e31958fa8fb43f9ac5723b90c317a668326e58a30b979bf79f1a2d142b64c20e7264db72537dc7c3268ab06de0e83ecd642465f3ae001213c4c1db47b0
+  checksum: 10/0a6db47bbf116eed0a857ba01d3b117303eebfffbc95ea96e7f9f2535149e84244650ba949ed07b284c89ad28dcf6f3531d4a91775c93d467b8108bb13969181
   languageName: node
   linkType: hard
 
@@ -10864,7 +10864,7 @@ __metadata:
     "@biomejs/biome": "npm:2.5.2"
     "@mdx-js/loader": "npm:3.1.1"
     "@mdx-js/react": "npm:3.1.1"
-    "@next/mdx": "npm:16.2.9"
+    "@next/mdx": "npm:16.2.10"
     "@playwright/test": "npm:1.61.1"
     "@radix-ui/themes": "npm:3.3.0"
     "@testing-library/dom": "npm:10.4.1"
