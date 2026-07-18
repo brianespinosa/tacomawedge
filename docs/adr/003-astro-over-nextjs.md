@@ -62,6 +62,20 @@ change exists to remove. We also did not add a token package such as Open Props:
 only about fifteen color values are actually load-bearing, so a full scale would
 be more dependency than the site uses.
 
+`normalize.css` is not used. Only five of its rules targeted an element this
+site renders, and four were IE-era fixes (`main { display: block }`,
+`a { background-color: transparent }`, `img { border-style: none }`,
+`body { margin: 0 }` — the last of which we set ourselves). Only
+`text-size-adjust`, which stops iOS Safari inflating text in landscape, was
+worth keeping, and it is inlined in `global.css`. Removing the dependency cut
+the inlined CSS from 7,862 B to 6,029 B (2,507 B to 1,969 B gzipped) with a
+verified pixel-identical render across all three pages in both color schemes.
+
+Note that Astro has no unused-CSS elimination — it minifies and bundles
+per-page from the module graph, but never removes an unmatched selector. Any
+stylesheet that is imported ships in full. That is why dropping the dependency
+was the fix rather than relying on the build.
+
 **Dark mode.** `next-themes` is removed with no replacement. A plain
 `@media (prefers-color-scheme: dark)` block redefines the color tokens. Because
 there is no toggle, there is no flash-of-wrong-theme to guard against and no
@@ -96,7 +110,7 @@ project's Framework Preset must be switched to Astro in the dashboard.
 ## Consequences
 
 - The home page went from roughly 193 kB of gzipped JavaScript to none. The
-  built pages are 5.8 kB (`/`), 8.5 kB (`/resources`), and 5.7 kB (404)
+  built pages are 5.1 kB (`/`), 7.9 kB (`/resources`), and 5.0 kB (404)
   gzipped. With `build.inlineStylesheets: 'always'`, each page is a single
   document request; the only other requests are images and Vercel's analytics.
 - **There is no longer any unit test coverage, and no coverage gate.** This is

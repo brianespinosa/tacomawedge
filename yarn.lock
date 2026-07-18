@@ -6922,13 +6922,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"normalize.css@npm:8.0.1":
-  version: 8.0.1
-  resolution: "normalize.css@npm:8.0.1"
-  checksum: 10/c3af2145c21d57b94fe9f1abe7bac82ec91f8088810ada6ee3385f29a2d51af441a469b3c680d25b27bfab5291908a3ef3ed7012955036e8967f0b18fe39f38a
-  languageName: node
-  linkType: hard
-
 "npm-run-path@npm:^4.0.0, npm-run-path@npm:^4.0.1":
   version: 4.0.1
   resolution: "npm-run-path@npm:4.0.1"
@@ -8469,7 +8462,6 @@ __metadata:
     astro: "npm:7.1.1"
     knip: "npm:6.27.0"
     lefthook: "npm:2.1.10"
-    normalize.css: "npm:8.0.1"
     sharp: "npm:0.35.3"
     typescript: "npm:6.0.3"
     vercel: "npm:56.3.1"
