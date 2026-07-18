@@ -197,6 +197,63 @@ section ul:last-child {
   }
 }
 
+/* Page transitions ----------------------------------------------------------
+ *
+ * Under Next.js the App Router kept the layout mounted, so the header and nav
+ * survived a navigation and their entrance animations played once per visit.
+ * Astro serves a fresh document per page, so without this the site heading
+ * re-runs its per-character fade on every navigation.
+ *
+ * Cross-document view transitions restore that continuity with no JavaScript.
+ * Scope is deliberately limited to the header and nav; transitioning <main> and
+ * revisiting the entrance animations more broadly is issue #552.
+ *
+ * Not Baseline: Chrome/Edge 126+, Safari 18.2+. Firefox ignores the at-rule and
+ * navigates normally, which is the intended degradation.
+ */
+
+@view-transition {
+  navigation: auto;
+}
+
+header {
+  view-transition-name: site-header;
+}
+
+nav {
+  view-transition-name: site-nav;
+}
+
+/*
+ * Everything that is not the header or nav belongs to the `root` group. Leaving
+ * it animating would cross-fade <main> too, which is out of scope here.
+ * mix-blend-mode is reset alongside the animation so the old and new snapshots
+ * do not double-paint while the named groups animate.
+ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/*
+ * The header and nav are identical on every page, so there is nothing to
+ * cross-fade between; showing only the incoming snapshot avoids a ghost.
+ */
+::view-transition-old(site-header),
+::view-transition-old(site-nav) {
+  animation: none;
+}
+
+/*
+ * The incoming document would otherwise replay the site heading's character
+ * fade. Suppressing it while a transition is running is what makes the header
+ * read as persistent rather than rebuilt.
+ */
+:active-view-transition {
+  --character-animation: none;
+}
+
 /*
  * The per-element delay comes from the :nth-child rules generated in
  * Layout.astro, which set --delay on the first STAGGER_STEPS children only.

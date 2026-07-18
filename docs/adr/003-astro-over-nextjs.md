@@ -89,6 +89,18 @@ character. Every animation is applied through a custom property
 `prefers-reduced-motion: reduce` can disable them by blanking those properties,
 without `!important`. The previous build had no reduced-motion handling at all.
 
+**Page transitions.** Under Next.js the App Router kept the layout mounted
+across navigations, so the site heading's per-character fade played once per
+visit. Astro serves a fresh document per page, which would replay it on every
+navigation. Native cross-document view transitions
+(`@view-transition { navigation: auto }`) restore that continuity with no
+JavaScript, scoped to the header and nav via `view-transition-name`. Astro's
+`<ClientRouter />` was rejected: it ships a client-side router, which would
+break the zero-JS floor and fail the `ships no framework JavaScript` spec.
+
+This is not Baseline — Chrome/Edge 126+, Safari 18.2+, no Firefox — and
+degrades to a normal navigation where unsupported.
+
 **Testing.** The eleven `@testing-library/react` unit test files (33 cases) and
 the `vitest` 100% coverage thresholds are removed outright, along with `vitest`,
 `happy-dom`, and the Testing Library packages. Astro's Container API for unit
@@ -117,6 +129,14 @@ project's Framework Preset must be switched to Astro in the dashboard.
   the most consequential trade in this change. Regressions must be caught by the
   Playwright specs, so any new user-facing behavior needs an e2e spec — the
   policy already recorded in `.github/CLAUDE.md` now carries the entire load.
+- **The view transitions cannot be verified by our test suite.** Playwright's
+  `toBeVisible()` ignores opacity, and the axe specs navigate with `page.goto()`,
+  which does not trigger a cross-document transition at all — so the suite
+  passes whether or not the transition works. Under Playwright the incoming
+  document's `document.timeline.currentTime` stays frozen at 0 and its entrance
+  animations never advance, which appears to be the harness never presenting a
+  frame rather than real browser behaviour. Changes to view transitions must be
+  checked manually in Chrome and Safari.
 - Styling is our own. There is no upstream design system supplying new tokens or
   fixing contrast issues for us, and the token file must be edited by hand to
   change the palette.
