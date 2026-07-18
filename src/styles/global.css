@@ -32,6 +32,32 @@ a {
   color: var(--accent-a11);
 }
 
+/*
+ * Shared by the nav links and the 404 page's "go back home" link. Uses the
+ * accent-12 foreground rather than white-on-accent-9, which only reaches a
+ * 3.0:1 contrast ratio and fails WCAG AA for body-size text.
+ */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-button);
+  font-weight: var(--font-weight-medium);
+  color: var(--accent-12);
+  text-decoration: none;
+  box-shadow:
+    inset 0 0 0 1px var(--accent-a7),
+    inset 0 0 0 1px var(--gray-a11);
+}
+
+.button.active,
+.button.solid {
+  background-color: var(--accent-a3);
+  box-shadow: none;
+}
+
 /* Headings ----------------------------------------------------------------- */
 
 h1,
@@ -160,9 +186,16 @@ section ul:last-child {
 
 /*
  * The per-element delay comes from the :nth-child rules generated in
- * Layout.astro. Only the first several are staggered; everything after that
- * shares the final delay so a long page (the resources list is ~40 elements)
- * is not left invisible for several seconds.
+ * Layout.astro, which set --delay on the first STAGGER_STEPS children only.
+ * Everything after that falls back to the 1.5s below, so a long page (the
+ * resources list is ~25 elements) is not left invisible for several seconds.
+ *
+ * The generated rules must set a custom property rather than `animation-delay`
+ * directly: Astro emits that inline <style> BEFORE this stylesheet, so a real
+ * `animation-delay` declaration there would lose the cascade to this rule and
+ * every element would animate at once. Going through --delay sidesteps
+ * ordering entirely. The longhand must also stay after the shorthand here,
+ * since `animation` resets `animation-delay` to 0s.
  */
 main > * {
   animation: var(--entrance-animation);

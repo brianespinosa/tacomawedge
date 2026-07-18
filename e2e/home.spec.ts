@@ -1,5 +1,6 @@
 import AxeBuilder from '@axe-core/playwright';
 import { expect, test } from '@playwright/test';
+import { waitForContentToSettle } from './settled';
 
 test.describe('home page', () => {
   test.beforeEach(async ({ page }) => {
@@ -40,6 +41,8 @@ test.describe('home page', () => {
   });
 
   test('passes axe accessibility scan', async ({ page }) => {
+    await waitForContentToSettle(page);
+
     const results = await new AxeBuilder({ page }).analyze();
     expect(
       results.violations.map((v) => ({

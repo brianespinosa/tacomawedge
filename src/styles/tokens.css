@@ -13,8 +13,6 @@
   color-scheme: light dark;
 
   /* Spacing */
-  --space-1: 4px;
-  --space-2: 8px;
   --space-3: 12px;
   --space-4: 16px;
   --space-5: 24px;
@@ -58,8 +56,6 @@
   --color-panel: #ffffffb3;
   --accent-a3: #00c2d121;
   --accent-a7: #009fbb82;
-  --accent-9: #00a2c7;
-  --accent-contrast: #fff;
   --accent-a11: #007491ef;
   --accent-12: #0d3c48;
   --gray-5: #e0e1e6;

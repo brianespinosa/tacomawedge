@@ -29,6 +29,14 @@ Locator priority (highest to lowest):
 
 ## Test Files
 
-- `home.spec.ts` — site heading and navigation render; axe accessibility scan passes
+- `home.spec.ts` — site heading and navigation render; no framework JavaScript loads; axe accessibility scan passes
 - `navigation.spec.ts` — Resources nav link navigates to `/resources`; site heading link navigates back to home
 - `accessibility.spec.ts` — axe accessibility scan passes on the resources page
+
+## Axe Scans and Entrance Animations
+
+Both axe specs set `test.use({ reducedMotion: 'reduce' })`. The site's entrance
+animations start every element in `<main>` at `opacity: 0`; axe skips fully
+transparent nodes and computes contrast against blended colors on partly-faded
+ones, so a scan run mid-animation is both incomplete and flaky. Keep the
+reduced-motion setting on any spec that runs axe.
