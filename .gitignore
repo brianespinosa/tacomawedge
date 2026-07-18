@@ -13,12 +13,9 @@
 /playwright-report
 /test-results
 
-# next.js
-/.next/
-/out/
-
-# production
-/build
+# astro
+/dist/
+/.astro/
 
 # misc
 .DS_Store
@@ -38,7 +35,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
 
 # yarn - Zero Installs not used; releases committed for reproducibility
 # https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored

@@ -2,7 +2,7 @@
 
 ## Running Tests
 
-Tests require a deployed Vercel URL — they do not run against `next dev`.
+Tests require a deployed Vercel URL — they do not run against `astro dev`.
 Set environment variables before running:
 
 - `PLAYWRIGHT_BASE_URL` — the target URL (e.g., a Vercel preview deployment URL)

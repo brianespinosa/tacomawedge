@@ -1,0 +1,205 @@
+---
+import Analytics from '@vercel/analytics/astro';
+import CharacterFade from '@/components/CharacterFade.astro';
+import ExternalLink from '@/components/ExternalLink.astro';
+import InsetImage from '@/components/InsetImage.astro';
+import Nav from '@/components/Nav.astro';
+import Section from '@/components/Section.astro';
+import SocialIcon from '@/components/SocialIcon.astro';
+import wedgehistmap from '@/img/wedgehistmap.jpg';
+import '@/styles/global.css';
+
+const SITE = {
+  title: 'Tacoma Wedge Historic District',
+  description: 'Information About Tacoma’s Wedge Historic District',
+};
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: { src: string; width: number; height: number; alt: string };
+  meta?: Record<string, string>;
+}
+
+const {
+  title,
+  description = SITE.description,
+  image = {
+    src: wedgehistmap.src,
+    width: wedgehistmap.width,
+    height: wedgehistmap.height,
+    alt: SITE.description,
+  },
+  meta = {},
+} = Astro.props;
+
+// Mirrors the Next.js metadata title template: `%s | Tacoma Wedge Historic District`.
+const pageTitle = title ? `${title} | ${SITE.title}` : SITE.title;
+const ogImage = new URL(image.src, Astro.site);
+
+/*
+ * Direct children of <main> fade in one after another. This reproduces the
+ * `staggerChildren: 0.15` that motion.main used to apply, without needing to
+ * know how many children a page has.
+ */
+const STAGGER_STEP_SECONDS = 0.15;
+const STAGGER_STEPS = 10;
+const staggerCss = Array.from(
+  { length: STAGGER_STEPS },
+  (_, index) =>
+    `main > :nth-child(${index + 1}){--delay:${(index * STAGGER_STEP_SECONDS).toFixed(2)}s}`,
+).join('');
+---
+
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/favicon.ico" sizes="32x32">
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)}>
+    <title>{pageTitle}</title>
+    <meta name="description" content={description}>
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={title ?? SITE.title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:image" content={ogImage}>
+    <meta property="og:image:width" content={String(image.width)}>
+    <meta property="og:image:height" content={String(image.height)}>
+    <meta property="og:image:alt" content={image.alt}>
+
+    <meta name="twitter:card" content="summary_large_image">
+    {Object.entries(meta).map(([name, content]) => (
+        <meta name={name} content={content} />
+      ))}
+    <style set:html={staggerCss}></style>
+  </head>
+  <body>
+    <header>
+      <div class="header-grid">
+        <h1>
+          <a href="/"><CharacterFade text={SITE.title} /></a>
+        </h1>
+        <Section>
+          <h2 class="visually-hidden">Map</h2>
+          <InsetImage src={wedgehistmap} alt="Wedge Historic District Map" />
+        </Section>
+      </div>
+    </header>
+
+    <Nav />
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <Section>
+          <h2 class="footer-heading">
+            <CharacterFade text="Related Links" />
+          </h2>
+          <ul>
+            <li>
+              <ExternalLink
+                href="https://www.nps.gov/nr/feature/places/16000856.htm"
+              >
+                National Register of Historic Places Program - NPS
+              </ExternalLink>
+            </li>
+            <li>
+              <ExternalLink
+                href="https://tacoma.gov/government/departments/planning-and-development-services/historic-preservation/tacomas-historic-districts-landmarks/#wedge-neighborhood-historic-district"
+              >
+                Tacoma's Historic Districts - City of Tacoma
+              </ExternalLink>
+            </li>
+          </ul>
+        </Section>
+
+        <Section>
+          <h2 class="footer-heading"><CharacterFade text="Social" /></h2>
+          <div class="social">
+            <ExternalLink
+              href="https://www.instagram.com/tacomawedge/"
+              class="icon-link"
+            >
+              <SocialIcon name="instagram" />
+            </ExternalLink>
+            <span class="separator" aria-hidden="true"></span>
+            <ExternalLink
+              href="https://www.facebook.com/tacomawedge/"
+              class="icon-link"
+            >
+              <SocialIcon name="facebook" />
+            </ExternalLink>
+          </div>
+        </Section>
+      </div>
+    </footer>
+
+    <Analytics />
+  </body>
+</html>
+
+<style is:global>
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.footer-heading {
+  font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
+  letter-spacing: var(--letter-spacing-4);
+  margin: 0;
+}
+</style>
+
+<style>
+.header-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--space-6);
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) 0;
+}
+
+.icon-link {
+  display: inline-flex;
+  color: var(--accent-a11);
+}
+
+.separator {
+  width: 1px;
+  height: var(--space-5);
+  margin: 0;
+  border: none;
+  background-color: var(--gray-a6);
+}
+</style>

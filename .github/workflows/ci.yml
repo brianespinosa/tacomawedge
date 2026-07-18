@@ -37,16 +37,9 @@ jobs:
       - uses: ./.github/actions/setup
       - run: yarn typecheck
 
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7.0.0
-      - uses: ./.github/actions/setup
-      - run: yarn test
-
   build:
     runs-on: ubuntu-latest
-    needs: [biome, knip, typecheck, test]
+    needs: [biome, knip, typecheck]
     outputs:
       url: ${{ steps.deploy.outputs.url }}
     permissions:
@@ -63,7 +56,6 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.0
       - uses: ./.github/actions/setup
-      - uses: brianespinosa/next-build-cache@main
       - run: yarn vercel pull --yes --token $VERCEL_TOKEN
       - run: |
           if [[ "$IS_DEFAULT_BRANCH" == "true" ]]; then

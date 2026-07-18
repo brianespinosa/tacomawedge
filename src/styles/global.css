@@ -1,0 +1,170 @@
+@import "normalize.css";
+@import "./tokens.css";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--gray-12);
+  font-family: var(--default-font-family);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+header,
+main,
+footer {
+  max-width: var(--content-max-width);
+  padding: 0 var(--content-padding-inline);
+  margin: auto;
+}
+
+header {
+  padding-top: var(--space-6);
+}
+
+a {
+  color: var(--accent-a11);
+}
+
+/* Headings ----------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
+  letter-spacing: var(--letter-spacing-5);
+  margin: 0.67em 0;
+}
+
+/* Radix's `sm` breakpoint, where the site heading stepped up to size 8. */
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-8);
+    line-height: var(--line-height-8);
+    letter-spacing: var(--letter-spacing-8);
+  }
+}
+
+h1 a {
+  color: var(--accent-a11);
+  text-decoration: none;
+}
+
+main h2 {
+  font-size: var(--font-size-6);
+  line-height: var(--line-height-6);
+  letter-spacing: var(--letter-spacing-6);
+  margin: var(--space-4) 0;
+}
+
+main h3 {
+  font-size: var(--font-size-6);
+  line-height: var(--line-height-6);
+  letter-spacing: var(--letter-spacing-6);
+  margin: var(--space-6) 0;
+  color: var(--accent-a11);
+}
+
+main h4 {
+  font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
+  letter-spacing: var(--letter-spacing-4);
+  margin: var(--space-4) 0;
+}
+
+/* Content ------------------------------------------------------------------ */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--accent-a11);
+  margin: var(--space-6) 0;
+}
+
+section ol,
+section ul {
+  padding-inline-start: 1.5em;
+}
+
+section ol li + li,
+section ul li + li {
+  margin-block-start: 0.75em;
+}
+
+section ol:last-child,
+section ul:last-child {
+  margin-block-end: 0;
+}
+
+/* Animations ---------------------------------------------------------------
+ *
+ * Entrance animations only. These replace the Framer Motion (`motion`) usages
+ * from the Next.js build, which were all one-shot fades on mount and needed a
+ * ~193 kB React runtime to run. See ADR 003.
+ */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    filter: blur(0.5em);
+    transform: translateY(1em);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+ * Every entrance animation is applied through one of these custom properties,
+ * so honouring `prefers-reduced-motion` is a matter of blanking them out. That
+ * avoids needing `!important` to win against the `animation` shorthands.
+ */
+:root {
+  --entrance-animation: fade-up 0.4s ease-out backwards;
+  --character-animation: fade-in 0.3s ease-out backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --entrance-animation: none;
+    --character-animation: none;
+  }
+}
+
+/*
+ * The per-element delay comes from the :nth-child rules generated in
+ * Layout.astro. Only the first several are staggered; everything after that
+ * shares the final delay so a long page (the resources list is ~40 elements)
+ * is not left invisible for several seconds.
+ */
+main > * {
+  animation: var(--entrance-animation);
+  animation-delay: var(--delay, 1.5s);
+}

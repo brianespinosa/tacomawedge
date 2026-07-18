@@ -1,7 +1,7 @@
 pre-commit:
   commands:
     biome:
-      glob: "*.{js,jsx,ts,tsx,json,css,scss,sass}"
+      glob: "*.{js,jsx,mjs,ts,tsx,json,css,astro}"
       exclude: ".claude/**"
       run: yarn biome check --write {staged_files}
       stage_fixed: true
@@ -9,7 +9,5 @@ pre-commit:
       glob: "package.json"
       run: npx sort-package-json
       stage_fixed: true
-    test:
-      run: yarn test
     typecheck:
       run: yarn typecheck

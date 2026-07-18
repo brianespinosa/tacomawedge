@@ -1,0 +1,40 @@
+---
+interface Props {
+  name: 'facebook' | 'instagram';
+}
+
+const { name } = Astro.props;
+
+const LABELS = { facebook: 'Facebook', instagram: 'Instagram' };
+
+const PATHS = {
+  facebook: {
+    d: 'M13.5 1A4.5 4.5 0 0 0 9 5.5V9H6.5a0.5 0.5 0 0 0 -0.5 0.5v4a0.5 0.5 0 0 0 0.5 0.5H9v8.5a0.5 0.5 0 0 0 0.5 0.5h4a0.5 0.5 0 0 0 0.5 -0.5V14h2.5a0.5 0.5 0 0 0 0.485 -0.379l1 -4A0.5 0.5 0 0 0 17.5 9H14V7.5A1.5 1.5 0 0 1 15.5 6h2a0.5 0.5 0 0 0 0.5 -0.5v-4a0.5 0.5 0 0 0 -0.5 -0.5h-4Z',
+    rule: undefined,
+  },
+  instagram: {
+    d: 'M7.5 0.75A6.75 6.75 0 0 0 0.75 7.5v9a6.75 6.75 0 0 0 6.75 6.75h9a6.75 6.75 0 0 0 6.75 -6.75v-9A6.75 6.75 0 0 0 16.5 0.75h-9ZM2.25 7.5c0 -2.9 2.35 -5.25 5.25 -5.25h9c2.9 0 5.25 2.35 5.25 5.25v9c0 2.9 -2.35 5.25 -5.25 5.25h-9a5.25 5.25 0 0 1 -5.25 -5.25v-9ZM19.5 6.25a1.25 1.25 0 1 1 -2.5 0 1.25 1.25 0 0 1 2.5 0ZM12 7.75a4.25 4.25 0 1 0 0 8.5 4.25 4.25 0 0 0 0 -8.5ZM6.25 12a5.75 5.75 0 1 1 11.5 0 5.75 5.75 0 0 1 -11.5 0Z',
+    rule: 'evenodd' as const,
+  },
+};
+
+const { d, rule } = PATHS[name];
+---
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="currentColor"
+  viewBox="0 0 24 24"
+  role="img"
+  aria-label={LABELS[name]}
+>
+  <path d={d} fill-rule={rule} clip-rule={rule} />
+</svg>
+
+<style>
+svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+</style>
