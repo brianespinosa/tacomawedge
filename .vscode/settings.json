@@ -8,6 +8,8 @@
     "source.fixAll.biome": "explicit",
     "source.organizeImports.biome": "explicit"
   },
+  // Biome's experimental Astro formatter can empty <style> blocks on save.
+  // Do not re-enable without reading CLAUDE.md in this directory.
   "[astro]": {
     "editor.formatOnSave": false
   },
