@@ -1,0 +1,16 @@
+{
+  "enabledMcpjsonServers": [
+    "astro-docs"
+  ],
+  "permissions": {
+    "allow": [
+      "Bash(yarn build:*)",
+      "Bash(yarn check:*)",
+      "Bash(yarn dev:*)",
+      "Bash(yarn e2e:*)",
+      "Bash(yarn knip:*)",
+      "Bash(yarn preview:*)",
+      "Bash(yarn typecheck:*)"
+    ]
+  }
+}
