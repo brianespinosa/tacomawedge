@@ -81,19 +81,20 @@ was the fix rather than relying on the build.
 there is no toggle, there is no flash-of-wrong-theme to guard against and no
 inline script is required.
 
-**Animations.** The four `motion` usages become CSS `@keyframes` with
+**Animations.** The `motion` usages become CSS `@keyframes` with
 `animation-delay`. `staggerChildren` becomes a set of `:nth-child` delay rules
-generated in `Layout.astro`; `CharacterFade` sets a `--i` custom property per
-character. Every animation is applied through a custom property
-(`--entrance-animation`, `--character-animation`) so that
-`prefers-reduced-motion: reduce` can disable them by blanking those properties,
-without `!important`. The previous build had no reduced-motion handling at all.
+generated in `Layout.astro`. The animation is applied through a custom property
+(`--entrance-animation`) so that `prefers-reduced-motion: reduce` can disable it
+by blanking that property, without `!important`. The previous build had no
+reduced-motion handling at all.
 
-**Page transitions.** Under Next.js the App Router kept the layout mounted
-across navigations, so the site heading's per-character fade played once per
-visit. Astro serves a fresh document per page, which would replay it on every
-navigation. Native cross-document view transitions
-(`@view-transition { navigation: auto }`) restore that continuity with no
+The per-character heading fade that the Next.js build had (`CharacterFade`) was
+dropped: it complicated page transitions for a decorative effect.
+
+**Page transitions.** Astro serves a fresh document per page, so the header and
+nav would otherwise be visibly rebuilt on every navigation. Native
+cross-document view transitions
+(`@view-transition { navigation: auto }`) give continuity with no
 JavaScript, scoped to the header and nav via `view-transition-name`. Astro's
 `<ClientRouter />` was rejected: it ships a client-side router, which would
 break the zero-JS floor and fail the `ships no framework JavaScript` spec.

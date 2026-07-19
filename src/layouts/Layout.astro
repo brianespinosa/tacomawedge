@@ -1,6 +1,5 @@
 ---
 import Analytics from '@vercel/analytics/astro';
-import CharacterFade from '@/components/CharacterFade.astro';
 import ExternalLink from '@/components/ExternalLink.astro';
 import InsetImage from '@/components/InsetImage.astro';
 import Nav from '@/components/Nav.astro';
@@ -83,7 +82,7 @@ const staggerCss = Array.from(
     <header>
       <div class="header-grid">
         <h1>
-          <a href="/"><CharacterFade text={SITE.title} /></a>
+          <a href="/">{SITE.title}</a>
         </h1>
         <Section>
           <h2 class="visually-hidden">Map</h2>
@@ -101,9 +100,7 @@ const staggerCss = Array.from(
     <footer>
       <div class="footer-grid">
         <Section>
-          <h2 class="footer-heading">
-            <CharacterFade text="Related Links" />
-          </h2>
+          <h2 class="footer-heading">Related Links</h2>
           <ul>
             <li>
               <ExternalLink
@@ -123,7 +120,7 @@ const staggerCss = Array.from(
         </Section>
 
         <Section>
-          <h2 class="footer-heading"><CharacterFade text="Social" /></h2>
+          <h2 class="footer-heading">Social</h2>
           <div class="social">
             <ExternalLink
               href="https://www.instagram.com/tacomawedge/"
