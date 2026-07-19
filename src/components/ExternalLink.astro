@@ -1,0 +1,13 @@
+---
+interface Props {
+  href: string;
+  class?: string;
+}
+
+const { href, class: className } = Astro.props;
+---
+
+<!-- biome-ignore lint/a11y/useAnchorContent: content comes from the slot, which Biome cannot see through. -->
+<a href={href} target="_blank" rel="noopener noreferrer" class={className}>
+  <slot />
+</a>

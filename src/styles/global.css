@@ -1,0 +1,273 @@
+@import "./tokens.css";
+
+/*
+ * We do not use normalize.css. Of its rules, only five targeted an element
+ * this site actually renders, and four of those were IE fixes (`main` display,
+ * `a` background, `img` border-style) that every browser we support handles
+ * natively. Dropping it removed ~6 kB of source CSS with a pixel-identical
+ * render. The one rule worth keeping is text-size-adjust below.
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Stops iOS Safari inflating text when the device is rotated to landscape. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--gray-12);
+  font-family: var(--default-font-family);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+header,
+main,
+footer {
+  max-width: var(--content-max-width);
+  padding: 0 var(--content-padding-inline);
+  margin: auto;
+}
+
+header {
+  padding-top: var(--space-6);
+}
+
+a {
+  color: var(--accent-a11);
+}
+
+/*
+ * Shared by the nav links and the 404 page's "go back home" link. Uses the
+ * accent-12 foreground rather than white-on-accent-9, which only reaches a
+ * 3.0:1 contrast ratio and fails WCAG AA for body-size text.
+ */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-button);
+  font-weight: var(--font-weight-medium);
+  color: var(--accent-12);
+  text-decoration: none;
+  box-shadow:
+    inset 0 0 0 1px var(--accent-a7),
+    inset 0 0 0 1px var(--gray-a11);
+}
+
+.button.active,
+.button.solid {
+  background-color: var(--accent-a3);
+  box-shadow: none;
+}
+
+/* Headings ----------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-bold);
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--font-size-5);
+  line-height: var(--line-height-5);
+  letter-spacing: var(--letter-spacing-5);
+  margin: 0.67em 0;
+}
+
+/* Radix's `sm` breakpoint, where the site heading stepped up to size 8. */
+@media (min-width: 768px) {
+  h1 {
+    font-size: var(--font-size-8);
+    line-height: var(--line-height-8);
+    letter-spacing: var(--letter-spacing-8);
+  }
+}
+
+h1 a {
+  color: var(--accent-a11);
+  text-decoration: none;
+}
+
+main h2 {
+  font-size: var(--font-size-6);
+  line-height: var(--line-height-6);
+  letter-spacing: var(--letter-spacing-6);
+  margin: var(--space-4) 0;
+}
+
+main h3 {
+  font-size: var(--font-size-6);
+  line-height: var(--line-height-6);
+  letter-spacing: var(--letter-spacing-6);
+  margin: var(--space-6) 0;
+  color: var(--accent-a11);
+}
+
+main h4 {
+  font-size: var(--font-size-4);
+  line-height: var(--line-height-4);
+  letter-spacing: var(--letter-spacing-4);
+  margin: var(--space-4) 0;
+}
+
+/* Content ------------------------------------------------------------------ */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--accent-a11);
+  margin: var(--space-6) 0;
+}
+
+section ol,
+section ul {
+  padding-inline-start: 1.5em;
+}
+
+section ol li + li,
+section ul li + li {
+  margin-block-start: 0.75em;
+}
+
+section ol:last-child,
+section ul:last-child {
+  margin-block-end: 0;
+}
+
+/* Animations ---------------------------------------------------------------
+ *
+ * Entrance animations only. These replace the Framer Motion (`motion`) usages
+ * from the Next.js build, which were all one-shot fades on mount and needed a
+ * ~193 kB React runtime to run. See ADR 003.
+ */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    filter: blur(0.5em);
+    transform: translateY(1em);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/*
+ * Every entrance animation is applied through one of these custom properties,
+ * so honouring `prefers-reduced-motion` is a matter of blanking them out. That
+ * avoids needing `!important` to win against the `animation` shorthands.
+ */
+:root {
+  --entrance-animation: fade-up 0.4s ease-out backwards;
+  --character-animation: fade-in 0.3s ease-out backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --entrance-animation: none;
+    --character-animation: none;
+  }
+}
+
+/* Page transitions ----------------------------------------------------------
+ *
+ * Under Next.js the App Router kept the layout mounted, so the header and nav
+ * survived a navigation and their entrance animations played once per visit.
+ * Astro serves a fresh document per page, so without this the site heading
+ * re-runs its per-character fade on every navigation.
+ *
+ * Cross-document view transitions restore that continuity with no JavaScript.
+ * Scope is deliberately limited to the header and nav; transitioning <main> and
+ * revisiting the entrance animations more broadly is issue #552.
+ *
+ * Not Baseline: Chrome/Edge 126+, Safari 18.2+. Firefox ignores the at-rule and
+ * navigates normally, which is the intended degradation.
+ */
+
+@view-transition {
+  navigation: auto;
+}
+
+header {
+  view-transition-name: site-header;
+}
+
+nav {
+  view-transition-name: site-nav;
+}
+
+/*
+ * Everything that is not the header or nav belongs to the `root` group. Leaving
+ * it animating would cross-fade <main> too, which is out of scope here.
+ * mix-blend-mode is reset alongside the animation so the old and new snapshots
+ * do not double-paint while the named groups animate.
+ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+/*
+ * The header and nav are identical on every page, so there is nothing to
+ * cross-fade between; showing only the incoming snapshot avoids a ghost.
+ */
+::view-transition-old(site-header),
+::view-transition-old(site-nav) {
+  animation: none;
+}
+
+/*
+ * The incoming document would otherwise replay the site heading's character
+ * fade. Suppressing it while a transition is running is what makes the header
+ * read as persistent rather than rebuilt.
+ */
+:active-view-transition {
+  --character-animation: none;
+}
+
+/*
+ * The per-element delay comes from the :nth-child rules generated in
+ * Layout.astro, which set --delay on the first STAGGER_STEPS children only.
+ * Everything after that falls back to the 1.5s below, so a long page (the
+ * resources list is ~25 elements) is not left invisible for several seconds.
+ *
+ * The generated rules must set a custom property rather than `animation-delay`
+ * directly: Astro emits that inline <style> BEFORE this stylesheet, so a real
+ * `animation-delay` declaration there would lose the cascade to this rule and
+ * every element would animate at once. Going through --delay sidesteps
+ * ordering entirely. The longhand must also stay after the shorthand here,
+ * since `animation` resets `animation-delay` to 0s.
+ */
+main > * {
+  animation: var(--entrance-animation);
+  animation-delay: var(--delay, 1.5s);
+}

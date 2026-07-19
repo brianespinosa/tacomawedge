@@ -14,8 +14,8 @@ Config: `.github/workflows/ci.yml`
 
 Runs on push and pull request to `main`. Jobs:
 
-- **biome**, **knip**, **typecheck**, and **test** run in parallel on all events.
-- **build** runs after all four pass — deploys to Vercel (preview on PR, production on `main`), outputs the deployment URL. Uses `brianespinosa/next-build-cache@main` for build caching.
+- **biome**, **knip**, and **typecheck** run in parallel on all events.
+- **build** runs after all three pass — deploys to Vercel (preview on PR, production on `main`), outputs the deployment URL.
 - **e2e** runs on pull requests only, after `build` — runs Playwright tests against the Vercel preview URL. Caches Playwright browsers by version. Uploads the HTML report as an artifact (30-day retention).
 
 Concurrency is configured to cancel in-progress runs on PRs when new commits are pushed. Runs on `main` are never cancelled.
@@ -28,7 +28,9 @@ The `build` job requires three repository secrets: `VERCEL_TOKEN`, `VERCEL_ORG_I
 
 ## E2E Coverage Policy
 
-Any new user-facing feature must have a corresponding e2e spec added or updated before the PR is merged. Document the spec in the PR description's test plan section.
+There are **no unit tests** — Playwright is the only test layer (see `docs/adr/003-astro-over-nextjs.md`). Any new user-facing feature must have a corresponding e2e spec added or updated before the PR is merged. Document the spec in the PR description's test plan section.
+
+`e2e/home.spec.ts` asserts that no framework JavaScript loads. Keep it passing — it is what prevents the zero-JS floor from regressing silently.
 
 ## Dependabot
 
