@@ -11,7 +11,6 @@ See `README.md` for repository overview and contents.
 This repository **REQUIRES** distributed CLAUDE.md files throughout the directory tree. Each subdirectory with significant functionality must have its own CLAUDE.md file:
 
 - `.github/CLAUDE.md` - GitHub Actions workflow and Dependabot documentation
-- `.vscode/CLAUDE.md` - Editor configuration, including why format-on-save is disabled for `.astro`
 
 **When adding new features or directories:**
 

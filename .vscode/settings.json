@@ -8,8 +8,10 @@
     "source.fixAll.biome": "explicit",
     "source.organizeImports.biome": "explicit"
   },
-  // Biome's experimental Astro formatter can empty <style> blocks on save.
-  // Do not re-enable without reading CLAUDE.md in this directory.
+  // Biome's experimental Astro/HTML formatter can empty a component's entire
+  // <style> block when it runs through the VS Code LSP on save. The CLI path is
+  // unaffected, so lefthook formats .astro at commit time instead. Do not
+  // re-enable until that is fixed upstream.
   "[astro]": {
     "editor.formatOnSave": false
   },
