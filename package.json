@@ -5,10 +5,9 @@
   "scripts": {
     "build": "astro build",
     "check": "biome check --write .",
-    "dev": "astro dev",
+    "dev": "astro dev --open",
     "e2e": "playwright test",
     "knip": "knip",
-    "open-browser": "open http://localhost:4321",
     "preview": "astro preview",
     "typecheck": "astro check"
   },
