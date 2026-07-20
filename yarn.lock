@@ -8464,7 +8464,7 @@ __metadata:
     lefthook: "npm:2.1.10"
     sharp: "npm:0.35.3"
     typescript: "npm:6.0.3"
-    vercel: "npm:56.3.1"
+    vercel: "npm:56.3.2"
   languageName: unknown
   linkType: soft
 
@@ -8999,9 +8999,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:56.3.1":
-  version: 56.3.1
-  resolution: "vercel@npm:56.3.1"
+"vercel@npm:56.3.2":
+  version: 56.3.2
+  resolution: "vercel@npm:56.3.2"
   dependencies:
     "@vercel/backends": "npm:0.8.25"
     "@vercel/blob": "npm:2.4.0"
@@ -9041,7 +9041,7 @@ __metadata:
   bin:
     vc: dist/vc.js
     vercel: dist/vc.js
-  checksum: 10/b7c20a30ba56175bbf8df71eefbeddd9c8948fdbd219f6470340834e6552445a3bd1bb86e160337fdbb99e35d43fd8a03654b48c27d403700cb8058c71d7e639
+  checksum: 10/478dbff0e07161457b9206448e8f1cfb2520fb1df935d1671b9ea09f8686653c902c77db81bfa8a0454408948061c390f55c91b8ee25eb2a63c7b7943c56c8a0
   languageName: node
   linkType: hard
 
