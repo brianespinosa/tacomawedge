@@ -28,7 +28,7 @@
   "devDependencies": {
     "@astrojs/check": "0.9.9",
     "@axe-core/playwright": "4.12.1",
-    "@biomejs/biome": "2.5.4",
+    "@biomejs/biome": "2.5.5",
     "@playwright/test": "1.61.1",
     "@types/node": "26.1.1",
     "knip": "6.27.0",
