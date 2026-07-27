@@ -3456,9 +3456,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:7.1.3":
-  version: 7.1.3
-  resolution: "astro@npm:7.1.3"
+"astro@npm:7.1.4":
+  version: 7.1.4
+  resolution: "astro@npm:7.1.4"
   dependencies:
     "@astrojs/compiler-rs": "npm:^0.3.1"
     "@astrojs/internal-helpers": "npm:0.10.1"
@@ -3488,7 +3488,7 @@ __metadata:
     http-cache-semantics: "npm:^4.2.0"
     js-yaml: "npm:^4.1.1"
     jsonc-parser: "npm:^3.3.1"
-    magic-string: "npm:^0.30.21"
+    magic-string: "npm:^1.0.0"
     magicast: "npm:^0.5.2"
     mrmime: "npm:^2.0.1"
     neotraverse: "npm:^1.0.1"
@@ -3524,7 +3524,7 @@ __metadata:
       optional: true
   bin:
     astro: ./bin/astro.mjs
-  checksum: 10/4761775778d00587618ded2829e078b9b1e2f1941c50df7582c3d740c915f3d4cbebf513cfc209a145a489bee88fb1672a3a223342772c97c18ce8fe7988c288
+  checksum: 10/d0fb8155ce4d3bcff295c09798ba569d1318e2d339fbaf96972af5d1aaae2c52629bff7ff39a7824b3fca4ec6dc398ec68779faff8f3559f85791a31637b11bd
   languageName: node
   linkType: hard
 
@@ -5818,12 +5818,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"magic-string@npm:^0.30.21":
-  version: 0.30.21
-  resolution: "magic-string@npm:0.30.21"
+"magic-string@npm:^1.0.0":
+  version: 1.1.0
+  resolution: "magic-string@npm:1.1.0"
   dependencies:
     "@jridgewell/sourcemap-codec": "npm:^1.5.5"
-  checksum: 10/57d5691f41ed40d962d8bd300148114f53db67fadbff336207db10a99f2bdf4a1be9cac3a68ee85dba575912ee1d4402e4396408196ec2d3afd043b076156221
+  checksum: 10/01e9b5c05c3bfe219cf6ffe0d0f9158b1c72becfe4bfa8e4896122bcbd44665b10cdfbd2d0b9cd850fa0876a756f80c9cd47b4086a946e3022d73ad467490c8c
   languageName: node
   linkType: hard
 
@@ -8440,7 +8440,7 @@ __metadata:
     "@playwright/test": "npm:1.62.0"
     "@types/node": "npm:26.1.1"
     "@vercel/analytics": "npm:2.0.1"
-    astro: "npm:7.1.3"
+    astro: "npm:7.1.4"
     knip: "npm:6.29.0"
     lefthook: "npm:2.1.10"
     sharp: "npm:0.35.3"
