@@ -228,9 +228,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/mdx@npm:7.0.3":
-  version: 7.0.3
-  resolution: "@astrojs/mdx@npm:7.0.3"
+"@astrojs/mdx@npm:7.0.4":
+  version: 7.0.4
+  resolution: "@astrojs/mdx@npm:7.0.4"
   dependencies:
     "@astrojs/internal-helpers": "npm:0.10.1"
     "@astrojs/markdown-remark": "npm:7.2.1"
@@ -252,7 +252,7 @@ __metadata:
   peerDependenciesMeta:
     "@astrojs/markdown-satteri":
       optional: true
-  checksum: 10/6c33ad0beb3342150a3ddf03cb959b3cb27d710a13e06d7deeb1e5d01068feda2419e770db1d8cfc34955c618b2cc4183024bfc82e669bc16432ea0f81b3cf49
+  checksum: 10/c6eaf0258b4a8a8cb90036403b82d89fcf88177885280039646c28c5474ec686d02e2dfc3d46c08ddb7579a9ea87102ba43daa3cfd638fde57acd7abf3ddc332
   languageName: node
   linkType: hard
 
@@ -8434,7 +8434,7 @@ __metadata:
   resolution: "tacomawedge@workspace:."
   dependencies:
     "@astrojs/check": "npm:0.9.9"
-    "@astrojs/mdx": "npm:7.0.3"
+    "@astrojs/mdx": "npm:7.0.4"
     "@axe-core/playwright": "npm:4.12.1"
     "@biomejs/biome": "npm:2.5.5"
     "@playwright/test": "npm:1.62.0"
