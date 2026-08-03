@@ -35,7 +35,7 @@
     "lefthook": "2.1.10",
     "sharp": "0.35.3",
     "typescript": "6.0.3",
-    "vercel": "58.1.0"
+    "vercel": "58.4.4"
   },
   "packageManager": "yarn@4.13.0"
 }
