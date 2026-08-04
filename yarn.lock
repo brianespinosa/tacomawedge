@@ -5520,9 +5520,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"knip@npm:6.30.0":
-  version: 6.30.0
-  resolution: "knip@npm:6.30.0"
+"knip@npm:6.31.0":
+  version: 6.31.0
+  resolution: "knip@npm:6.31.0"
   dependencies:
     fdir: "npm:^6.5.0"
     formatly: "npm:^0.3.0"
@@ -5540,7 +5540,7 @@ __metadata:
   bin:
     knip: bin/knip.js
     knip-bun: bin/knip-bun.js
-  checksum: 10/bde40bef946296920d7181c4d2547183d2b758b8fbe0c72446cb037124662bc1d86decd74880ac22443680ffb1269fd95b2836ce85e450a71b30e401b78c050e
+  checksum: 10/92759374329d437560d2c7a80ec46b05d281c166a82c0bd3e2ee6b8733b0cc81a0f3cb7199d6f2094d794216f52bf746ce155df02975e112e430bad40b7d1e88
   languageName: node
   linkType: hard
 
@@ -8445,7 +8445,7 @@ __metadata:
     "@types/node": "npm:26.1.2"
     "@vercel/analytics": "npm:2.0.1"
     astro: "npm:7.1.6"
-    knip: "npm:6.30.0"
+    knip: "npm:6.31.0"
     lefthook: "npm:2.1.10"
     sharp: "npm:0.35.3"
     typescript: "npm:6.0.3"
