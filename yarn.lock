@@ -3092,12 +3092,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vercel/python@npm:6.55.1":
-  version: 6.55.1
-  resolution: "@vercel/python@npm:6.55.1"
+"@vercel/python@npm:6.55.2":
+  version: 6.55.2
+  resolution: "@vercel/python@npm:6.55.2"
   dependencies:
     "@vercel/python-analysis": "npm:0.13.1"
-  checksum: 10/1b2fa1312a3363f41c4ff6a5cde355d84f8b9a5f2e03f30a2e45b3548ce1a39a9362eb1f7fee638fb75bdfb811ed7bd8a8c392309d89607ff5845fe4543e0af5
+  checksum: 10/ae6a27a6c4e6e27dcf06f8ed4382a9e3ee3e3fcf04cdae64d8fd636fb022deb214f9624f58a729dea0b52857f857a0beb5f7df808db01355b81654cbcdf7d6f4
   languageName: node
   linkType: hard
 
@@ -3184,6 +3184,34 @@ __metadata:
     json-schema-to-ts: "npm:1.6.4"
     ts-morph: "npm:12.0.0"
   checksum: 10/f9c6c1060e8a302cf5dd35c4604087d9215555b6188ca9a18e8a73ca67bacc973945cf035ada9728dd9618dd88cef44edf358dee8c9578202d6a47ac74676821
+  languageName: node
+  linkType: hard
+
+"@vercel/vc-native-darwin-arm64@npm:58.7.1":
+  version: 58.7.1
+  resolution: "@vercel/vc-native-darwin-arm64@npm:58.7.1"
+  conditions: os=darwin & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@vercel/vc-native-darwin-x64@npm:58.7.1":
+  version: 58.7.1
+  resolution: "@vercel/vc-native-darwin-x64@npm:58.7.1"
+  conditions: os=darwin & cpu=x64
+  languageName: node
+  linkType: hard
+
+"@vercel/vc-native-linux-arm64@npm:58.7.1":
+  version: 58.7.1
+  resolution: "@vercel/vc-native-linux-arm64@npm:58.7.1"
+  conditions: os=linux & cpu=arm64
+  languageName: node
+  linkType: hard
+
+"@vercel/vc-native-linux-x64@npm:58.7.1":
+  version: 58.7.1
+  resolution: "@vercel/vc-native-linux-x64@npm:58.7.1"
+  conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
@@ -8449,7 +8477,7 @@ __metadata:
     lefthook: "npm:2.1.10"
     sharp: "npm:0.35.3"
     typescript: "npm:6.0.3"
-    vercel: "npm:58.5.1"
+    vercel: "npm:58.7.1"
   languageName: unknown
   linkType: soft
 
@@ -8984,9 +9012,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vercel@npm:58.5.1":
-  version: 58.5.1
-  resolution: "vercel@npm:58.5.1"
+"vercel@npm:58.7.1":
+  version: 58.7.1
+  resolution: "vercel@npm:58.7.1"
   dependencies:
     "@vercel/backends": "npm:0.8.32"
     "@vercel/blob": "npm:2.4.0"
@@ -9008,12 +9036,16 @@ __metadata:
     "@vercel/next": "npm:4.21.1"
     "@vercel/node": "npm:5.9.5"
     "@vercel/prepare-flags-definitions": "npm:0.3.0"
-    "@vercel/python": "npm:6.55.1"
+    "@vercel/python": "npm:6.55.2"
     "@vercel/redwood": "npm:2.5.1"
     "@vercel/remix-builder": "npm:5.9.2"
     "@vercel/ruby": "npm:2.5.1"
     "@vercel/rust": "npm:1.4.1"
     "@vercel/static-build": "npm:2.12.1"
+    "@vercel/vc-native-darwin-arm64": "npm:58.7.1"
+    "@vercel/vc-native-darwin-x64": "npm:58.7.1"
+    "@vercel/vc-native-linux-arm64": "npm:58.7.1"
+    "@vercel/vc-native-linux-x64": "npm:58.7.1"
     chokidar: "npm:4.0.0"
     esbuild: "npm:0.27.0"
     jose: "npm:5.9.6"
@@ -9023,10 +9055,19 @@ __metadata:
     smol-toml: "npm:1.5.2"
     undici: "npm:5.29.0"
     zod: "npm:4.1.11"
+  dependenciesMeta:
+    "@vercel/vc-native-darwin-arm64":
+      optional: true
+    "@vercel/vc-native-darwin-x64":
+      optional: true
+    "@vercel/vc-native-linux-arm64":
+      optional: true
+    "@vercel/vc-native-linux-x64":
+      optional: true
   bin:
     vc: dist/vc.js
     vercel: dist/vc.js
-  checksum: 10/02dfe119326ac35503c23e480b9aaf6cdce0b222823064eb73693502b27e51b3225be3a52f97f6d4befb8562f2373eec7b3955272721cbc448fa59b0a627b468
+  checksum: 10/13c1e6d07bd45d3af6843b9e3d1bb1577be136f21861fbf0d87cc31ad73eb61985a4e841bc23dadf3b36f586110456ce9650c977b62c5520897309837988c88a
   languageName: node
   linkType: hard
 
