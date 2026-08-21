@@ -138,22 +138,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/internal-helpers@npm:0.10.2":
-  version: 0.10.2
-  resolution: "@astrojs/internal-helpers@npm:0.10.2"
-  dependencies:
-    "@types/hast": "npm:^3.0.4"
-    "@types/mdast": "npm:^4.0.4"
-    js-yaml: "npm:^4.3.0"
-    picomatch: "npm:^4.0.4"
-    retext-smartypants: "npm:^6.2.0"
-    shiki: "npm:^4.0.2"
-    smol-toml: "npm:^1.6.0"
-    unified: "npm:^11.0.5"
-  checksum: 10/137677e01a88a0b1c7e1098fba8f862c745c0b1994cbb8b05a166fe7de3ca27e8f6107aa3fe958e557901b1556c701237b0d3d648f6fbc318aa7c3a4012a89d6
-  languageName: node
-  linkType: hard
-
 "@astrojs/internal-helpers@npm:0.10.3":
   version: 0.10.3
   resolution: "@astrojs/internal-helpers@npm:0.10.3"
@@ -231,16 +215,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/markdown-satteri@npm:0.3.5":
-  version: 0.3.5
-  resolution: "@astrojs/markdown-satteri@npm:0.3.5"
+"@astrojs/markdown-satteri@npm:0.3.6":
+  version: 0.3.6
+  resolution: "@astrojs/markdown-satteri@npm:0.3.6"
   dependencies:
-    "@astrojs/internal-helpers": "npm:0.10.2"
+    "@astrojs/internal-helpers": "npm:0.10.3"
     "@astrojs/prism": "npm:4.0.2"
     github-slugger: "npm:^2.0.0"
     hast-util-from-html: "npm:^2.0.3"
     satteri: "npm:^0.9.1"
-  checksum: 10/f15b47d0ba3d0faa1d960adda4b8b9d278354c09d3167e5422256d3f74c6f881c748a86ee92265829af81b013549633a034f510f9b005f3536bc5b3ea8a4d60d
+  checksum: 10/bc594ce6e2366510cde53ccee5c64dcdc77d5ee4cc6b2b36658bb2f729be2a493645d635a5c22571d7a45e68ab6c7bd18482c456de5c0cdc7e6a3146c02ade49
   languageName: node
   linkType: hard
 
@@ -3149,13 +3133,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:7.2.2":
-  version: 7.2.2
-  resolution: "astro@npm:7.2.2"
+"astro@npm:7.2.3":
+  version: 7.2.3
+  resolution: "astro@npm:7.2.3"
   dependencies:
     "@astrojs/compiler-rs": "npm:^0.3.2"
-    "@astrojs/internal-helpers": "npm:0.10.2"
-    "@astrojs/markdown-satteri": "npm:0.3.5"
+    "@astrojs/internal-helpers": "npm:0.10.3"
+    "@astrojs/markdown-satteri": "npm:0.3.6"
     "@astrojs/telemetry": "npm:3.3.3"
     "@capsizecss/unpack": "npm:^4.0.0"
     "@clack/prompts": "npm:^1.1.0"
@@ -3200,7 +3184,7 @@ __metadata:
     tinyexec: "npm:^1.0.4"
     tinyglobby: "npm:^0.2.15"
     ultrahtml: "npm:^1.6.0"
-    unifont: "npm:~0.7.4"
+    unifont: "npm:~0.7.5"
     unstorage: "npm:^1.17.5"
     vite: "npm:^8.0.13"
     vitefu: "npm:^1.1.2"
@@ -3208,7 +3192,7 @@ __metadata:
     yargs-parser: "npm:^22.0.0"
     zod: "npm:^4.3.6"
   peerDependencies:
-    "@astrojs/markdown-remark": 7.2.2
+    "@astrojs/markdown-remark": 7.2.3
   dependenciesMeta:
     sharp:
       optional: true
@@ -3217,7 +3201,7 @@ __metadata:
       optional: true
   bin:
     astro: ./bin/astro.mjs
-  checksum: 10/9039125b62d52595e7b87177543efb697a288663d1d7a2038b566d56110838b72280aad0cbd4a24df218f0d736f0fde33c72e03281eb23757d548c18bf800c6f
+  checksum: 10/6f65fcad7394ed704cd7407855c4ad9600b6282b1423db41304ef65d3249c9d9f7bfba1a9830fb5c7b468dc2a15d95e1a2bad113c0123a268e21311c53f92a74
   languageName: node
   linkType: hard
 
@@ -7987,7 +7971,7 @@ __metadata:
     "@playwright/test": "npm:1.62.1"
     "@types/node": "npm:26.2.0"
     "@vercel/analytics": "npm:2.0.1"
-    astro: "npm:7.2.2"
+    astro: "npm:7.2.3"
     knip: "npm:6.32.2"
     lefthook: "npm:2.1.10"
     sharp: "npm:0.35.3"
@@ -8307,6 +8291,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"undici@npm:^8.0.0":
+  version: 8.10.0
+  resolution: "undici@npm:8.10.0"
+  checksum: 10/254219966d4a2fb110f565ffe73131caa82e949f207b9dd88930ebc23dfb6561db72ca187391cbd408ceeba7c647cb47d4110e8ae00df44c0c66e8a21e091dc0
+  languageName: node
+  linkType: hard
+
 "unified@npm:^11.0.0, unified@npm:^11.0.4, unified@npm:^11.0.5":
   version: 11.0.5
   resolution: "unified@npm:11.0.5"
@@ -8322,14 +8313,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"unifont@npm:~0.7.4":
-  version: 0.7.4
-  resolution: "unifont@npm:0.7.4"
+"unifont@npm:~0.7.5":
+  version: 0.7.5
+  resolution: "unifont@npm:0.7.5"
   dependencies:
     css-tree: "npm:^3.1.0"
-    ofetch: "npm:^1.5.1"
     ohash: "npm:^2.0.11"
-  checksum: 10/e842754ae1f1b83e04f0eb9f30ea07976b99c38c3aed38606466a5dfb2c5f426fb98428ef02bb5b5de03b80b1aab274a9cf683247beabb25c8bc0c35646a352c
+    undici: "npm:^8.0.0"
+  checksum: 10/8b403ec6b7c8e40e510a76341d722b68d7d8483f37e925b5f19b02612280138ad28c55d78d2cb73d3939b8ebb10669865590d7a369a32b578357e498489ddda1
   languageName: node
   linkType: hard
 
