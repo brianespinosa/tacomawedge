@@ -34,7 +34,7 @@
   "dependencies": {
     "@astrojs/mdx": "7.0.7",
     "@vercel/analytics": "2.0.1",
-    "astro": "7.2.4"
+    "astro": "7.2.6"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
