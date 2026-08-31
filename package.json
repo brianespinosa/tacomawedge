@@ -44,7 +44,7 @@
     "@types/node": "26.3.0",
     "knip": "6.32.2",
     "lefthook": "2.1.10",
-    "sharp": "0.35.3",
+    "sharp": "0.35.4",
     "typescript": "6.0.3",
     "vercel": "59.3.0"
   },
