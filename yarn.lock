@@ -3871,7 +3871,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild@npm:>=0.28.1 <1":
+"esbuild@npm:>=0.28.1 <1, esbuild@npm:^0.28.0":
   version: 0.28.2
   resolution: "esbuild@npm:0.28.2"
   dependencies:
@@ -4928,7 +4928,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"js-yaml@npm:>=4.3.1 <5":
+"js-yaml@npm:>=4.3.1 <5, js-yaml@npm:^4.3.0":
   version: 4.3.1
   resolution: "js-yaml@npm:4.3.1"
   dependencies:
@@ -7769,12 +7769,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"srvx@npm:^0.11.13":
-  version: 0.11.15
-  resolution: "srvx@npm:0.11.15"
+"srvx@npm:0.11.16":
+  version: 0.11.16
+  resolution: "srvx@npm:0.11.16"
   bin:
     srvx: bin/srvx.mjs
-  checksum: 10/db7952c8400e154b4e122b7236e165d3ef9d1db7b7abdfb45f914e3035792fe2fdd6ea3923d4907b18513ed1a851d5b381dde5ae290eb0b0b97c421236899db5
+  checksum: 10/5ec582e92d618220e24bbe9efe4900215081b1949327ee165f3cf4b01e766c458a8aaba50347e8fa1b536ac8b854e0e6d8cd970c62c64278487867699243124d
   languageName: node
   linkType: hard
 
@@ -8238,14 +8238,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:>=6.28.0 <7":
+"undici@npm:>=6.28.0 <7, undici@npm:^6.23.0":
   version: 6.28.0
   resolution: "undici@npm:6.28.0"
   checksum: 10/672a7a53bd1f6c80edb73b357ab36e98ef9e474024c442aab2b8ea2bc32f1103cab05525c78661ae724f3e1340e23d03efb9730fba28e76218ab0ec52e15d75a
   languageName: node
   linkType: hard
 
-"undici@npm:>=7.29.0 <8":
+"undici@npm:^7.27.1":
   version: 7.29.0
   resolution: "undici@npm:7.29.0"
   checksum: 10/ca73639071bdcbc41e57be1800847fa18f86f8fbf7a5641ff9899f7bbb6f5cecdd593e225f5fd94e31703dcbfaea4a722a3b81cab90c5c4e2b406aec1ae55732
