@@ -3009,9 +3009,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:7.2.10":
-  version: 7.2.10
-  resolution: "astro@npm:7.2.10"
+"astro@npm:7.3.1":
+  version: 7.3.1
+  resolution: "astro@npm:7.3.1"
   dependencies:
     "@astrojs/compiler-rs": "npm:^0.4.0"
     "@astrojs/internal-helpers": "npm:0.11.0"
@@ -3066,7 +3066,7 @@ __metadata:
     vitefu: "npm:^1.1.2"
     xxhash-wasm: "npm:^1.1.0"
     yargs-parser: "npm:^22.0.0"
-    zod: "npm:^4.3.6"
+    zod: "npm:^4.5.4"
   peerDependencies:
     "@astrojs/markdown-remark": ^7.3.0
   dependenciesMeta:
@@ -3077,7 +3077,7 @@ __metadata:
       optional: true
   bin:
     astro: ./bin/astro.mjs
-  checksum: 10/76850ec4de9c3d6377f25a07714e127afaf2b1581a05c5431f732ff1fb6248fc0a2249ff35769f14125c6ef886545bbc9d3e18b75ea5b2de14cb6d461d3ff76b
+  checksum: 10/4191e8cc4842623633fd300c589ad042bfe6bb9ffb5377c60286b06dc0b6b783bacc520c757b102fdd6ee531210ed66feea38f9c3facdc2e435674954c42ade2
   languageName: node
   linkType: hard
 
@@ -6585,7 +6585,7 @@ __metadata:
     "@playwright/test": "npm:1.62.1"
     "@types/node": "npm:26.4.0"
     "@vercel/analytics": "npm:2.0.1"
-    astro: "npm:7.2.10"
+    astro: "npm:7.3.1"
     knip: "npm:6.34.0"
     lefthook: "npm:2.1.12"
     sharp: "npm:0.35.4"
@@ -7734,10 +7734,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^4.3.6, zod@npm:^4.4.3":
+"zod@npm:^4.4.3":
   version: 4.4.3
   resolution: "zod@npm:4.4.3"
   checksum: 10/804b9a42aa8f35f2b3c5a8dff906291cb749115f83ee2afe3576d70b5b5c53c965365c7f4967690647a9c54af9838ff232a85ff9577a0a36c44b68bc6cdefe36
+  languageName: node
+  linkType: hard
+
+"zod@npm:^4.5.4":
+  version: 4.5.4
+  resolution: "zod@npm:4.5.4"
+  checksum: 10/b2fd4aaf358359650a1f27f303a462f0f49b4e5582f517ad8894ed566fdceb9da391b59babffe3c70574c8064174883735657eb28e12db5c7021455a631866c4
   languageName: node
   linkType: hard
 
