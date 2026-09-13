@@ -24,21 +24,21 @@
     "vercel/esbuild": ">=0.28.1 <1"
   },
   "dependencies": {
-    "@astrojs/mdx": "7.0.6",
+    "@astrojs/mdx": "8.0.0",
     "@vercel/analytics": "2.0.1",
-    "astro": "7.2.3"
+    "astro": "7.3.1"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
     "@axe-core/playwright": "4.13.0",
-    "@biomejs/biome": "2.5.9",
-    "@playwright/test": "1.62.1",
-    "@types/node": "26.2.0",
-    "knip": "6.32.2",
-    "lefthook": "2.1.10",
-    "sharp": "0.35.3",
+    "@biomejs/biome": "2.5.12",
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.5.0",
+    "knip": "6.34.0",
+    "lefthook": "2.1.12",
+    "sharp": "0.35.4",
     "typescript": "6.0.3",
-    "vercel": "59.1.4"
+    "vercel": "59.3.0"
   },
   "packageManager": "yarn@4.13.0"
 }
