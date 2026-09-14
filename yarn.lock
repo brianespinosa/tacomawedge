@@ -202,6 +202,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@astrojs/markdown-satteri@npm:0.4.1":
+  version: 0.4.1
+  resolution: "@astrojs/markdown-satteri@npm:0.4.1"
+  dependencies:
+    "@astrojs/internal-helpers": "npm:0.11.0"
+    "@astrojs/prism": "npm:4.0.2"
+    github-slugger: "npm:^2.0.0"
+    satteri: "npm:^0.10.3"
+  checksum: 10/b08fd173b8a5bb4dc86819d63e66c23ea5ac9949f3b1c00019cf1e248e174d7ba57ca0fd6c220ae0a50e1d9e10c88e63109a6ea31585733cda44baf058854357
+  languageName: node
+  linkType: hard
+
 "@astrojs/mdx@npm:8.0.0":
   version: 8.0.0
   resolution: "@astrojs/mdx@npm:8.0.0"
@@ -3002,13 +3014,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"astro@npm:7.3.1":
-  version: 7.3.1
-  resolution: "astro@npm:7.3.1"
+"astro@npm:7.3.2":
+  version: 7.3.2
+  resolution: "astro@npm:7.3.2"
   dependencies:
     "@astrojs/compiler-rs": "npm:^0.4.0"
     "@astrojs/internal-helpers": "npm:0.11.0"
-    "@astrojs/markdown-satteri": "npm:0.4.0"
+    "@astrojs/markdown-satteri": "npm:0.4.1"
     "@astrojs/telemetry": "npm:3.3.3"
     "@capsizecss/unpack": "npm:^4.0.0"
     "@clack/prompts": "npm:^1.1.0"
@@ -3070,7 +3082,7 @@ __metadata:
       optional: true
   bin:
     astro: ./bin/astro.mjs
-  checksum: 10/4191e8cc4842623633fd300c589ad042bfe6bb9ffb5377c60286b06dc0b6b783bacc520c757b102fdd6ee531210ed66feea38f9c3facdc2e435674954c42ade2
+  checksum: 10/a74b77701c2bcffce2c551a327f1008d0dae40f381deea074ce01755027670789fb1f7ca833258e67db53cd30ff0e1503190ac02a1c15f764ab6fe53a5c28297
   languageName: node
   linkType: hard
 
@@ -6541,7 +6553,7 @@ __metadata:
     "@playwright/test": "npm:1.63.0"
     "@types/node": "npm:26.5.1"
     "@vercel/analytics": "npm:2.0.1"
-    astro: "npm:7.3.1"
+    astro: "npm:7.3.2"
     knip: "npm:6.35.1"
     lefthook: "npm:2.1.12"
     sharp: "npm:0.35.4"
