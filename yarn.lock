@@ -190,18 +190,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/markdown-satteri@npm:0.4.0":
-  version: 0.4.0
-  resolution: "@astrojs/markdown-satteri@npm:0.4.0"
-  dependencies:
-    "@astrojs/internal-helpers": "npm:0.11.0"
-    "@astrojs/prism": "npm:4.0.2"
-    github-slugger: "npm:^2.0.0"
-    satteri: "npm:^0.10.3"
-  checksum: 10/e3415299e62e839a8de7c4e4a9ffaf652407ad675d63d61aba16d9a2accc1c3122184ce0854d219cbe457956dbe2579287f603b4ea1eb48d99e105536092cd9f
-  languageName: node
-  linkType: hard
-
 "@astrojs/markdown-satteri@npm:0.4.1":
   version: 0.4.1
   resolution: "@astrojs/markdown-satteri@npm:0.4.1"
@@ -214,12 +202,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@astrojs/mdx@npm:8.0.0":
-  version: 8.0.0
-  resolution: "@astrojs/mdx@npm:8.0.0"
+"@astrojs/mdx@npm:8.0.1":
+  version: 8.0.1
+  resolution: "@astrojs/mdx@npm:8.0.1"
   dependencies:
     "@astrojs/internal-helpers": "npm:0.11.0"
-    "@astrojs/markdown-satteri": "npm:0.4.0"
+    "@astrojs/markdown-satteri": "npm:0.4.1"
     es-module-lexer: "npm:^2.0.0"
   peerDependencies:
     "@astrojs/markdown-remark": ^7.3.0
@@ -228,7 +216,7 @@ __metadata:
   peerDependenciesMeta:
     "@astrojs/markdown-remark":
       optional: true
-  checksum: 10/6b15da7860b61594f2ab536feea2d25b9b5439c2283597de34827a3dd7fcf46d68c574e9fafa7b91301afbe50d004e9f208a3c135f16cf45056127814eabd253
+  checksum: 10/dc36e6a0ca8b2fab5e350dc429803476fe9dbff48b0255ba4b3f66da6ecf0449cc0f3aaa50d0642448b046a5e97488260d0bed7be45e20fe876161a7cae56e54
   languageName: node
   linkType: hard
 
@@ -6547,7 +6535,7 @@ __metadata:
   resolution: "tacomawedge@workspace:."
   dependencies:
     "@astrojs/check": "npm:0.9.10"
-    "@astrojs/mdx": "npm:8.0.0"
+    "@astrojs/mdx": "npm:8.0.1"
     "@axe-core/playwright": "npm:4.13.0"
     "@biomejs/biome": "npm:2.5.13"
     "@playwright/test": "npm:1.63.0"
