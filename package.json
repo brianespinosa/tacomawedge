@@ -28,7 +28,7 @@
     "vercel/undici": ">=6.28.0 <7"
   },
   "dependencies": {
-    "@astrojs/mdx": "8.0.0",
+    "@astrojs/mdx": "8.0.1",
     "@vercel/analytics": "2.0.1",
     "astro": "7.3.2"
   },
