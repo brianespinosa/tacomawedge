@@ -1,0 +1,28 @@
+savePrefix: ''
+strictPeerDependencies: true
+autoInstallPeers: false
+engineStrict: true
+strictDepBuilds: true
+minimumReleaseAge: 7200 # minutes; keep <= Dependabot cooldown default-days
+
+overrides:
+  '@vercel/fun>@tootallnate/once': '^3.0.1'
+  '@vercel/fun>tar': '>=7.5.11'
+  '@vercel/gatsby-plugin-vercel-builder>esbuild': '>=0.28.1 <1'
+  '@vercel/node>esbuild': '>=0.28.1 <1'
+  '@vercel/node>undici': '>=6.28.0 <7'
+  '@vercel/python-analysis>js-yaml': '>=4.3.1 <5'
+  '@vercel/python-analysis>minimatch': '^10.2.3'
+  '@vercel/python-analysis>smol-toml': '^1.8.0'
+  '@vercel/rust>smol-toml': '^1.8.0'
+  'minimatch>brace-expansion': '>=5.0.7 <6'
+  'tsx>esbuild': '>=0.28.1 <1'
+  'vercel>esbuild': '>=0.28.1 <1'
+  'vercel>smol-toml': '^1.8.0'
+  'vercel>undici': '>=6.28.0 <7'
+
+allowBuilds:
+  # esbuild: postinstall downloads the platform-specific binary; required for esbuild to run.
+  esbuild: true
+  # lefthook: postinstall installs the git hooks defined in lefthook.yml; required for pre-commit checks.
+  lefthook: true

@@ -1,9 +1,11 @@
 # NOTE: This is a local composite action and requires the repository to have
 # already been checked out before it is called (e.g. actions/checkout@v6.0.2).
 #
-# NOTE: We do not use the built-in `cache: yarn` option on actions/setup-node
-# because v6 restricts automatic caching to npm only. Yarn caching is handled
-# explicitly below. See docs/adr/002-github-actions-yarn-cache.md for details.
+# NOTE: We do not use the built-in `cache: pnpm` option on actions/setup-node
+# because it requires pnpm to already be on PATH when setup-node resolves the
+# cache key, which corepack has not enabled yet at that point. pnpm caching is
+# handled explicitly below. See docs/adr/005-github-actions-pnpm-cache.md for
+# details.
 
 name: Setup
 description: Enable corepack and install dependencies
@@ -18,17 +20,17 @@ runs:
     - run: corepack enable
       shell: bash
 
-    - name: Get yarn cache directory
-      id: yarn-cache-dir
-      run: echo "dir=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+    - name: Get pnpm store directory
+      id: pnpm-cache-dir
+      run: echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
       shell: bash
 
     - uses: actions/cache@v5.0.3
       with:
-        path: ${{ steps.yarn-cache-dir.outputs.dir }}
-        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        path: ${{ steps.pnpm-cache-dir.outputs.dir }}
+        key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
         restore-keys: |
-          ${{ runner.os }}-yarn-
+          ${{ runner.os }}-pnpm-
 
-    - run: yarn install --immutable
+    - run: pnpm install --frozen-lockfile
       shell: bash

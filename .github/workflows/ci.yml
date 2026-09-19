@@ -19,14 +19,14 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup
-      - run: yarn biome ci .
+      - run: pnpm biome ci .
 
   knip:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup
-      - run: yarn knip --reporter github-actions
+      - run: pnpm knip --reporter github-actions
         env:
           PLAYWRIGHT_BASE_URL: https://example.com
 
@@ -35,7 +35,7 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup
-      - run: yarn typecheck
+      - run: pnpm typecheck
 
   build:
     runs-on: ubuntu-latest
@@ -56,19 +56,19 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.1
       - uses: ./.github/actions/setup
-      - run: yarn vercel pull --yes --token $VERCEL_TOKEN
+      - run: pnpm vercel pull --yes --token $VERCEL_TOKEN
       - run: |
           if [[ "$IS_DEFAULT_BRANCH" == "true" ]]; then
-            yarn vercel build --prod
+            pnpm vercel build --prod
           else
-            yarn vercel build
+            pnpm vercel build
           fi
       - id: deploy
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            URL=$(yarn vercel deploy --prebuilt --token $VERCEL_TOKEN)
+            URL=$(pnpm vercel deploy --prebuilt --token $VERCEL_TOKEN)
           else
-            URL=$(yarn vercel deploy --prebuilt --prod --token $VERCEL_TOKEN)
+            URL=$(pnpm vercel deploy --prebuilt --prod --token $VERCEL_TOKEN)
           fi
           echo "url=$URL" >> $GITHUB_OUTPUT
 
@@ -93,12 +93,12 @@ jobs:
           key: playwright-${{ runner.os }}-${{ steps.playwright-version.outputs.version }}
       - name: Install Playwright browsers
         if: steps.playwright-cache.outputs.cache-hit != 'true'
-        run: yarn playwright install chromium --with-deps
+        run: pnpm playwright install chromium --with-deps
       - name: Install Playwright system dependencies
         if: steps.playwright-cache.outputs.cache-hit == 'true'
-        run: yarn playwright install-deps chromium
+        run: pnpm playwright install-deps chromium
       - name: Run Playwright tests
-        run: yarn e2e
+        run: pnpm e2e
       - uses: actions/upload-artifact@v7
         if: always()
         with:

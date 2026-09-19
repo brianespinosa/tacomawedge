@@ -11,22 +11,6 @@
     "preview": "astro preview",
     "typecheck": "astro check"
   },
-  "resolutions": {
-    "@vercel/fun/@tootallnate/once": "^3.0.1",
-    "@vercel/fun/tar": ">=7.5.11",
-    "@vercel/gatsby-plugin-vercel-builder/esbuild": ">=0.28.1 <1",
-    "@vercel/node/esbuild": ">=0.28.1 <1",
-    "@vercel/node/undici": ">=6.28.0 <7",
-    "@vercel/python-analysis/js-yaml": ">=4.3.1 <5",
-    "@vercel/python-analysis/minimatch": "^10.2.3",
-    "@vercel/python-analysis/smol-toml": "^1.8.0",
-    "@vercel/rust/smol-toml": "^1.8.0",
-    "minimatch/brace-expansion": ">=5.0.7 <6",
-    "tsx/esbuild": ">=0.28.1 <1",
-    "vercel/esbuild": ">=0.28.1 <1",
-    "vercel/smol-toml": "^1.8.0",
-    "vercel/undici": ">=6.28.0 <7"
-  },
   "dependencies": {
     "@astrojs/mdx": "8.0.1",
     "@vercel/analytics": "2.0.1",
@@ -44,5 +28,5 @@
     "typescript": "6.0.3",
     "vercel": "59.3.0"
   },
-  "packageManager": "yarn@4.13.0"
+  "packageManager": "pnpm@12.4.2"
 }
