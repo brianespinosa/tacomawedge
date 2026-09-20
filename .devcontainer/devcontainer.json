@@ -1,9 +1,9 @@
 {
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22-bullseye",
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "yarn install",
+  "updateContentCommand": "pnpm install",
   "postCreateCommand": "",
-  "postAttachCommand": "yarn start",
+  "postAttachCommand": "pnpm dev",
   "customizations": {
     "codespaces": {
       "openFiles": ["src/app/page.tsx"]

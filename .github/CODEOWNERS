@@ -6,4 +6,4 @@
 # Set no owners for the following paths/files (mainly for Dependabot)
 package.json
 package-lock.json
-yarn.lock
+pnpm-lock.yaml

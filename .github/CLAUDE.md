@@ -4,7 +4,7 @@
 
 Config: `.github/actions/setup/action.yml`
 
-Shared setup used by all CI jobs after checkout: Node (from `.nvmrc`), corepack enable, `yarn install --immutable`.
+Shared setup used by all CI jobs after checkout: Node (from `.nvmrc`), corepack enable, `pnpm install --frozen-lockfile`.
 
 Note: `actions/checkout` must remain in each job directly — local composite actions can only be resolved after the repo is checked out.
 
@@ -38,7 +38,9 @@ Config: `.github/dependabot.yml`
 
 Monitors `npm` dependencies weekly, targeting `main`. Commit messages use `chore(deps):` prefix via the `commit-message` config.
 
+`cooldown.default-days: 7` holds back freshly published versions. It must stay at or above `minimumReleaseAge` in `pnpm-workspace.yaml` (7200 minutes, 5 days), or Dependabot will propose versions pnpm refuses to install under `--frozen-lockfile`.
+
 ## Notes
 
 - Node version is pinned via `.nvmrc` — update there to change it everywhere
-- Corepack must be enabled before running any `yarn` commands — handled in the composite action
+- pnpm is installed by `pnpm/action-setup` in the composite action, which reads the version from `packageManager` in `package.json`
