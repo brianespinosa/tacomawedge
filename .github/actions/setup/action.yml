@@ -1,36 +1,24 @@
 # NOTE: This is a local composite action and requires the repository to have
 # already been checked out before it is called (e.g. actions/checkout@v6.0.2).
 #
-# NOTE: We do not use the built-in `cache: pnpm` option on actions/setup-node
-# because it requires pnpm to already be on PATH when setup-node resolves the
-# cache key, which corepack has not enabled yet at that point. pnpm caching is
-# handled explicitly below. See docs/adr/005-github-actions-pnpm-cache.md for
-# details.
+# NOTE: pnpm/action-setup runs before actions/setup-node so that setup-node's
+# built-in `cache: pnpm` option can resolve the pnpm store path, which needs
+# pnpm already on PATH. No version input is given: action-setup reads the
+# pinned version from package.json's packageManager field. See
+# docs/adr/005-github-actions-pnpm-cache.md.
 
 name: Setup
-description: Enable corepack and install dependencies
+description: Install pnpm and dependencies
 
 runs:
   using: composite
   steps:
+    - uses: pnpm/action-setup@v4
+
     - uses: actions/setup-node@v6.2.0
       with:
         node-version-file: .nvmrc
-
-    - run: corepack enable
-      shell: bash
-
-    - name: Get pnpm store directory
-      id: pnpm-cache-dir
-      run: echo "dir=$(pnpm store path)" >> $GITHUB_OUTPUT
-      shell: bash
-
-    - uses: actions/cache@v5.0.3
-      with:
-        path: ${{ steps.pnpm-cache-dir.outputs.dir }}
-        key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
-        restore-keys: |
-          ${{ runner.os }}-pnpm-
+        cache: pnpm
 
     - run: pnpm install --frozen-lockfile
       shell: bash

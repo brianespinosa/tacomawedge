@@ -38,7 +38,9 @@ Config: `.github/dependabot.yml`
 
 Monitors `npm` dependencies weekly, targeting `main`. Commit messages use `chore(deps):` prefix via the `commit-message` config.
 
+`cooldown.default-days: 7` holds back freshly published versions. It must stay at or above `minimumReleaseAge` in `pnpm-workspace.yaml` (7200 minutes, 5 days), or Dependabot will propose versions pnpm refuses to install under `--frozen-lockfile`.
+
 ## Notes
 
 - Node version is pinned via `.nvmrc` — update there to change it everywhere
-- Corepack must be enabled before running any `pnpm` commands — handled in the composite action
+- pnpm is installed by `pnpm/action-setup` in the composite action, which reads the version from `packageManager` in `package.json`

@@ -1,42 +1,47 @@
-# ADR 005: Explicit pnpm Store Cache in GitHub Actions
+# ADR 005: pnpm Setup and Store Cache in GitHub Actions
 
 ## Status
 
-Accepted (supersedes ADR-002)
+Accepted
 
 ## Context
 
-Following the migration to pnpm (ADR 004), GitHub Actions CI needs to cache
-the pnpm content-addressable store instead of the Yarn cache folder to avoid
-re-downloading dependencies on every run.
+Following the migration to pnpm (ADR 004), GitHub Actions CI needs to install
+pnpm and cache its content-addressable store instead of the Yarn cache folder.
 
-`actions/setup-node` provides a built-in `cache: pnpm` option for this
-purpose. It is unsuitable for our setup for the same reason the Yarn cache
-option was in ADR 002: it runs `pnpm store path` during cache key resolution,
-which requires `pnpm` to already be resolvable on `PATH`. Corepack has not
-enabled the project-pinned package manager yet at that point in the job, so
-the step would either fail or fall back to whatever `pnpm` (if any) happens to
-be preinstalled on the runner image, rather than the version pinned in
-`packageManager`.
+`actions/setup-node` provides a built-in `cache: pnpm` option. It runs
+`pnpm store path` while resolving the cache key, so pnpm must already be on
+`PATH` at that point. ADR 002 rejected the equivalent Yarn option for the same
+reason.
+
+Two mechanisms can put the pinned pnpm on `PATH` first:
+
+- `corepack enable`, which reads `packageManager` from `package.json`. Node
+  bundles Corepack through Node 24 only; the Node TSC voted to stop
+  distributing it from Node 25. pnpm's own CI documentation now recommends
+  against Corepack.
+- `pnpm/action-setup`, which installs pnpm directly. With no `version` input
+  it also reads `packageManager`, so the version is not duplicated and cannot
+  drift from the pin.
 
 ## Decision
 
-We use explicit caching in the `.github/actions/setup` composite action:
+The `.github/actions/setup` composite action runs, in order:
 
-1. `actions/setup-node` runs with no `cache` option
-2. `corepack enable` runs to activate the project-pinned pnpm version
-3. `pnpm store path` captures the correct store directory path
-4. `actions/cache` restores/saves the cache using a key derived from
-   `runner.os` + `hashFiles('**/pnpm-lock.yaml')`
-5. `pnpm install --frozen-lockfile` runs with the warm cache available
+1. `pnpm/action-setup` with no `version` input, taking the version from
+   `packageManager` in `package.json`
+2. `actions/setup-node` with `node-version-file: .nvmrc` and `cache: pnpm`
+3. `pnpm install --frozen-lockfile`
+
+Because pnpm is on `PATH` before step 2, the built-in cache resolves the store
+path correctly and no explicit `actions/cache` step is needed.
 
 ## Consequences
 
-- Cache key is shared across all CI jobs that use the same `pnpm-lock.yaml`,
-  so the first job to complete install will populate the cache for
-  subsequent runs.
-- When `pnpm-lock.yaml` changes, the cache key changes and a full install
-  runs. The `restore-keys` fallback allows partial cache hits on the
-  previous lockfile.
-- This approach must be revisited if `actions/setup-node` ships a way to
-  resolve the cache key after corepack activates the pinned package manager.
+- One fewer step than the explicit-cache approach, and no hand-maintained
+  cache key. `actions/setup-node` derives it from the lockfile.
+- No dependency on Corepack, so moving past Node 24 does not break CI.
+- The pnpm version lives in exactly one place, `packageManager`. Bumping it
+  needs no CI change.
+- This supersedes the Yarn cache arrangement in ADR 002, which described the
+  same problem for `yarn config get cacheFolder`.

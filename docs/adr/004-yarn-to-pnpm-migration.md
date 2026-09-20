@@ -26,10 +26,9 @@ and `package.json`:
 | --- | --- |
 | `defaultSemverRangePrefix: ""` | `savePrefix: ''` |
 | `nodeLinker: node-modules` | dropped; pnpm's default `isolated` linker is stricter and held for this project |
-| `nmMode: hardlinks-global` | dropped; pnpm hardlinks from the global store by default |
 | `logFilters` YN0002/YN0060/YN0086 as `error` | `strictPeerDependencies: true` and `autoInstallPeers: false` |
 | `logFilters` YN0068/YN0069 as `error` | no equivalent; pnpm does not detect unused or redundant `packageExtensions` (see Consequences) |
-| `packageExtensions` | `packageExtensions`, same shape, ported directly |
+| `packageExtensions` | none needed; all five entries were removed after verifying pnpm satisfies each peer from the resolved graph |
 | `resolutions` | `overrides`, with `parent>child` selectors instead of `parent/child` |
 | `yarnPath` + `.yarn/releases/` | deleted; `packageManager` plus pnpm's default `pmOnFail: download` handles versioning |
 
@@ -40,11 +39,19 @@ proposes a version pnpm would refuse under `--frozen-lockfile`.
 
 ## Consequences
 
+- **All five `packageExtensions` were dropped, not ported.** Each was removed
+  and a full clean install re-run; none was required. pnpm resolves peers
+  across the whole graph rather than per branch, so `typescript` (a direct
+  devDependency) satisfies the `vercel`, `@vercel/express` and
+  `@astrojs/language-server` peers, and `@emnapi/core`/`@emnapi/runtime` are
+  supplied as real dependencies by `@bruits/satteri-wasm32-wasi` (via Astro's
+  MDX pipeline) and `@img/sharp-wasm32` (via `sharp`), satisfying
+  `@napi-rs/wasm-runtime`. This is a property of this repo's dependency shape:
+  a repo without Astro or `sharp` in its tree does need an explicit exception.
 - **Lost enforcement**: this was the only repo filtering YN0069 (redundant
-  `packageExtensions`) as an error. pnpm has no mechanism to detect an
-  unused or redundant `packageExtensions` entry — that check is gone. Each
-  ported entry was manually verified as still required by removing it and
-  re-running install; see the migration PR for results.
+  `packageExtensions`) as an error. pnpm has no mechanism to detect an unused
+  or redundant `packageExtensions` entry, so if entries are added later they
+  can rot silently.
 - **Linker held**: Astro has historically been sensitive to strict
   `node_modules` layouts. pnpm's default isolated linker was verified to work
   for `astro build`, `astro check`, and the Playwright/axe e2e suite without
