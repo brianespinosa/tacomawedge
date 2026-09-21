@@ -6,6 +6,9 @@
   "enabledMcpjsonServers": [
     "astro-docs"
   ],
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
+  },
   "permissions": {
     "allow": [
       "Bash(pnpm build:*)",
