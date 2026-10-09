@@ -23,7 +23,7 @@
     "@playwright/test": "1.63.0",
     "@types/node": "26.6.4",
     "knip": "6.39.0",
-    "lefthook": "2.1.15",
+    "lefthook": "2.1.16",
     "sharp": "0.35.5",
     "typescript": "6.0.3",
     "vercel": "62.0.0"
